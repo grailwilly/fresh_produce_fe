@@ -60,7 +60,7 @@ export const Nav = () => {
             <rect x="14" y="11" width="7" height="12" />
           </svg>
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Fresh Produce
+            Farmer's Valley Market 
           </span>
         </a>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
@@ -108,7 +108,7 @@ export const Nav = () => {
             </svg>
           </button>
           {isMenuOpen && (
-            <div className="absolute top-0 left-0 w-full">
+            <div className="absolute top-0 left-0 w-full bg-gold">
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
@@ -134,7 +134,7 @@ export const Nav = () => {
                         <rect x="14" y="11" width="7" height="12" />
                       </svg>
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-                        Fresh Produce
+                        FARMER'S VALLEY MARKET
                       </span>
                     </a>
                   </div>
