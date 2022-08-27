@@ -1,7 +1,9 @@
+import Homepage from "./components/pages/Homepage";
+
 function App() {
   return (
-    <div className="App p-10">
-      Homepage
+    <div className="App">
+      <Homepage />
     </div>
   );
 }
