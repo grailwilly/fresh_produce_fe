@@ -1,15 +1,16 @@
 import React from 'react'
 import { Nav } from '../layouts/Nav'
 
-const Register = () => {
+const Products = () => {
   return (
     <>
       <Nav />
       <div className='text-center text-5xl'>
-        <h1>Register</h1>
+        <h1>Products
+        </h1>
       </div>
     </>
   )
 }
 
-export default Register
+export default Products

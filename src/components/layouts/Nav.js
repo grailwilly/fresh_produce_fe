@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 export const Nav = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,14 +9,14 @@ export const Nav = () => {
       <div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
         <ul className="flex items-center hidden space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
+            <Link
+              to="/products"
               aria-label="Our product"
               title="Our product"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
-              Product
-            </a>
+              Products
+            </Link>
           </li>
           <li>
             <a
@@ -38,8 +39,8 @@ export const Nav = () => {
             </a>
           </li>
         </ul>
-        <a
-          href="/"
+        <Link
+          to="/"
           aria-label="Company"
           title="Company"
           className="inline-flex items-center lg:mx-auto"
@@ -62,27 +63,27 @@ export const Nav = () => {
           <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
             Farmer's Valley Market 
           </span>
-        </a>
+        </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
           <li>
-            <a
-              href="/"
+            <Link
+              to="/sign-in"
               aria-label="Sign in"
               title="Sign in"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal"
             >
               Sign in
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/"
+            <Link
+              to="/register"
               className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal hover:bg-teal hover:text-[#f8fafc] focus:shadow-outline focus:outline-none"
               aria-label="Sign up"
               title="Sign up"
             >
               Sign up
-            </a>
+            </Link>
           </li>
         </ul>
         <div className="ml-auto lg:hidden">
@@ -112,8 +113,8 @@ export const Nav = () => {
               <div className="p-5 bg-white border rounded shadow-sm">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <a
-                      href="/"
+                    <Link
+                      to="/"
                       aria-label="Company"
                       title="Company"
                       className="inline-flex items-center"
@@ -136,7 +137,7 @@ export const Nav = () => {
                       <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
                         FARMER'S VALLEY MARKET
                       </span>
-                    </a>
+                    </Link>
                   </div>
                   <div>
                     <button
@@ -157,14 +158,14 @@ export const Nav = () => {
                 <nav>
                   <ul className="space-y-4">
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/products"
                         aria-label="Our product"
                         title="Our product"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
-                        Product
-                      </a>
+                        Products
+                      </Link>
                     </li>
                     <li>
                       <a
@@ -197,14 +198,14 @@ export const Nav = () => {
                       </a>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/register"
                         className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-teal hover:bg-teal focus:shadow-outline focus:outline-none"
                         aria-label="Sign up"
                         title="Sign up"
                       >
                         Sign up
-                      </a>
+                      </Link>
                     </li>
                   </ul>
                 </nav>
