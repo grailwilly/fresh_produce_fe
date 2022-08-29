@@ -6,6 +6,7 @@ const reducer = createReducer({}, (builder) => {
     builder
       .addCase(LOAD_PRODUCTS, (state, payload) => {
         state = payload.action
+
         return state
       })
   })
