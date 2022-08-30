@@ -1,7 +1,21 @@
 import { Nav } from "../layouts/Nav";
 
-export default function Homepage() {
+
+
+
+const Homepage = ({products}) => {
+
+
+
   return (
-    <Nav />
+    <>
+      <Nav />
+      <div className="text-center text-5xl">
+        Homepage
+      </div>
+    </>
+
   )
 }
+
+export default Homepage
