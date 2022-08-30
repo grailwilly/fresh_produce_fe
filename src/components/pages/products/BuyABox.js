@@ -54,7 +54,7 @@ const BuyABox = ({ productItems, productBox, cardData, increaseQty, decreaseQty,
                             <button data-action="decrement" onClick={() => decrease(e.id)} className="bg-teal text-gray-600 hover:text-white hover:bg-dark-green h-full w-20 rounded-l cursor-pointer outline-none">
                               <span className="m-auto text-2xl font-thin">−</span>
                             </button>
-                            <input type="number" className="outline-none focus:outline-none text-center w-full bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" onChange={(el) => qtyChangeHandler(el, e.id)} name="custom-input-number" value={cardData.length > 0 ? cardData.find(el => el.id === e.id).qty : 0}></input>
+                            <input type="number" className="outline-none focus:outline-none text-center w-full bg-[#D7F6E6] font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" onChange={(el) => qtyChangeHandler(el, e.id)} name="custom-input-number" value={cardData.length > 0 ? cardData.find(el => el.id === e.id).qty : 0}></input>
                             <button data-action="increment" onClick={() => add(e.id)} className="bg-teal text-gray-600 hover:text-white hover:bg-dark-green h-full w-20 rounded-r cursor-pointer">
                               <span className="m-auto text-2xl font-thin">+</span>
                             </button>
@@ -63,7 +63,7 @@ const BuyABox = ({ productItems, productBox, cardData, increaseQty, decreaseQty,
                         </div>
                         <span className="mt-5 text-xs text-dk-white">{`10 ${e.qty_measurement} / box`}</span>
 
-                        <button className=" bg-teal hover:bg-dark-green flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform bg-gray-800 rounded-md hover:bg-gray-700 focus:outline-none focus:bg-gray-700">
+                        <button className=" bg-teal hover:bg-dark-green flex items-center justify-center w-full px-2 py-2 mt-4 font-medium tracking-wide text-white capitalize transition-colors duration-200 transform rounded-md  focus:outline-none focus:bg-gray-700">
                           <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 mx-1" viewBox="0 0 20 20" fill="currentColor">
                             <path d="M3 1a1 1 0 000 2h1.22l.305 1.222a.997.997 0 00.01.042l1.358 5.43-.893.892C3.74 11.846 4.632 14 6.414 14H15a1 1 0 000-2H6.414l1-1H14a1 1 0 00.894-.553l3-6A1 1 0 0017 3H6.28l-.31-1.243A1 1 0 005 1H3zM16 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM6.5 18a1.5 1.5 0 100-3 1.5 1.5 0 000 3z" />
                           </svg>
