@@ -1,16 +1,13 @@
 import Homepage from "./components/pages/Homepage";
 import Register from "./components/pages/Register";
 import SignIn from "./components/pages/SignIn";
-import { Nav } from "./components/layouts/Nav";
 import { Route, Routes } from "react-router-dom";
 import products from "./components/actions/products";
-import { useEffect,lazy,Suspense } from "react";
+import { useEffect, } from "react";
 import { connect } from "react-redux";
+import Products from './components/pages/Products'
 
-const Products  = lazy(() => import("./components/pages/Products"));
-
-
-function App({productItems, products}) {
+function App({products}) {
 
   
 
@@ -27,7 +24,7 @@ function App({productItems, products}) {
         <Route path='/' element={<Homepage></Homepage>} />
         <Route path='/register' element={<Register></Register>} />
         <Route path='/sign-in' element={<SignIn></SignIn>} />
-        <Route path='/products' productItems={productItems} element={ <><Nav/><Suspense fallback='Loading...'><Products></Products></Suspense></>} />
+        <Route path='/products'element={<Products/>} />
       </Routes>
     </>
   );
