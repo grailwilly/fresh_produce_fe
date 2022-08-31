@@ -1,4 +1,4 @@
-import { ADD_CART,LOAD_CART } from "../constants/constants";
+import { ADD_CART,UPDATE_CART_QTY } from "../constants/constants";
 
 
 export const addCart = (item) => dispatch => {
@@ -7,5 +7,17 @@ export const addCart = (item) => dispatch => {
         type: ADD_CART,
         action: item
         
+    })
+}
+
+
+
+export const updateCartQty = (id,qty) => dispatch => {
+    dispatch({
+        type: UPDATE_CART_QTY,
+        action: {
+            id,
+            qty
+        }
     })
 }
