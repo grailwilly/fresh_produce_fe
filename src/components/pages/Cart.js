@@ -90,7 +90,7 @@ const Cart = ({items}) => {
             <span>Total cost</span>
             <span>{cartItems.length > 0 && priceFormat(cartItems.map(e => e.price * e.qty).reduce((a,b) => a+b))}</span>
           </div>
-          <button className="bg-indigo-500 font-semibold hover:bg-indigo-600 py-3 text-sm text-white uppercase w-full">Checkout</button>
+          <button className="bg-teal font-semibold hover:bg-dark-green py-3 text-sm text-white uppercase w-full">Complete Order</button>
         </div>
       </div>
 
