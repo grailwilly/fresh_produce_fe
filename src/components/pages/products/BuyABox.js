@@ -9,11 +9,8 @@ const BuyABox = ({ addCart, productItems, productBox, cardData, increaseQty, dec
 
 
   useEffect(() => {
-    if (cardData.length < 1) {
-      productBox(productItems)
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [productItems])
+    productBox()
+  }, [productBox])
 
 
   const qtyChangeHandler = (e, id) => {
