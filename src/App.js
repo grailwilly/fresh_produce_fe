@@ -3,6 +3,7 @@ import Register from "./components/pages/Register";
 import SignIn from "./components/pages/SignIn";
 import { Route, Routes } from "react-router-dom";
 import Products from './components/pages/Products'
+import Cart from "./components/pages/Cart";
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
         <Route path='/register' element={<Register></Register>} />
         <Route path='/sign-in' element={<SignIn></SignIn>} />
         <Route path='/products'element={<Products/>} />
+        <Route path='/cart'element={<Cart/>} />
       </Routes>
     </>
   );

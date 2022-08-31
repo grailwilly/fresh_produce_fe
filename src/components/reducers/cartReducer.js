@@ -6,8 +6,7 @@ import {ADD_CART} from '../constants/constants'
 const cartReducer = createReducer ({}, (builder) => {
     builder
     .addCase(ADD_CART, (state,payload) => {
-        console.log('test')
-        state.push(1)
+        state.push(payload.action)
         return state
     })
   

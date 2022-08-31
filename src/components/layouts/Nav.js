@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Cart from './cart/Cart';
+import CartIcon from './cart/CartIcon';
 export const Nav = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -70,7 +70,7 @@ export const Nav = () => {
           </Link>
           <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
 
-            <Cart></Cart>
+            <CartIcon></CartIcon>
 
             <li>
               <Link
@@ -195,7 +195,7 @@ export const Nav = () => {
                         </a>
                       </li>
 
-                      <Cart></Cart>
+                      <CartIcon></CartIcon>
 
                       <li>
                         <a
