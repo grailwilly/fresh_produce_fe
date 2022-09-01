@@ -1,10 +1,7 @@
-import { Nav } from '../layouts/Nav'
 import { priceFormat } from '../helpers/helpers'
 import { connect } from 'react-redux'
 import { useEffect,useState } from 'react'
 import {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem} from '../actions/cart'
-
-
 
 const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem}) => {
 
@@ -21,12 +18,8 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
        
     }
 
-
-
     return (
         <>
-            <Nav />
-
             <div className="container mx-auto mt-10">
                 <div className="flex shadow-md my-10">
                     <div className="w-3/4 bg-white px-10 py-10">

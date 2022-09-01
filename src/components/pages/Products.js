@@ -9,7 +9,7 @@ const Products = () => {
 
   return (
     <>
-      <Nav />
+     
       <Suspense fallback={<Loading />}>
         <BuyAbox />
       </Suspense>
