@@ -1,4 +1,4 @@
-import { ADD_CART,UPDATE_CART_QTY } from "../constants/constants";
+import { ADD_CART,UPDATE_CART_QTY,DECREASE_CART_QTY,INCREASE_CART_QTY } from "../constants/constants";
 
 
 export const addCart = (item) => dispatch => {
@@ -11,13 +11,24 @@ export const addCart = (item) => dispatch => {
 }
 
 
+export const increaseCartQty = (id) => dispatch => {
 
-export const updateCartQty = (id,qty) => dispatch => {
+    dispatch({
+        type: INCREASE_CART_QTY,
+        action: id
+    })
+}
+export const decreaseCartQty = (id) => dispatch => {
+
+    dispatch({
+        type: DECREASE_CART_QTY,
+        action: id
+    })
+}
+export const updateCartQty = (value,id) => dispatch => {
+
     dispatch({
         type: UPDATE_CART_QTY,
-        action: {
-            id,
-            qty
-        }
+        action: {value,id}
     })
 }
