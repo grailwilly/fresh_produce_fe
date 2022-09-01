@@ -1,6 +1,7 @@
 import {useState} from "react";
 import { register } from "../actions/user";
 import { connect } from "react-redux";
+import { Link } from "react-router-dom";
 
 export const Register = ({register}) => {
 
@@ -44,10 +45,10 @@ export const Register = ({register}) => {
                       </p>
                       <p tabIndex={0} className="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">
                           Already have account?{" "}
-                          <a className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer">
+                          <Link to='/sign-in' className="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none text-gray-800 cursor-pointer">
                               {" "}
                               Sign in here
-                          </a>
+                          </Link>
                       </p>
                       <div className="mt-6 w-full">
                           <label htmlFor="fName" className="text-sm font-medium leading-none text-gray-800">
