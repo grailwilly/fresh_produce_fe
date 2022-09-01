@@ -1,5 +1,6 @@
 import { Nav } from "../layouts/Nav";
 import react, { useState } from "react"
+import { Footer } from "../layouts/Footer";
 
 
 
@@ -164,6 +165,7 @@ const Homepage = ({products}) => {
           </div>
         </div>
       </div>
+      <Footer />
     </>
 
   )
