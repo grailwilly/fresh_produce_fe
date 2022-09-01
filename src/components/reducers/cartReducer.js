@@ -1,5 +1,5 @@
-import { createReducer,current} from "@reduxjs/toolkit"
-import { ADD_CART, LOAD_CART, INCREASE_CART_QTY,DECREASE_CART_QTY,UPDATE_CART_QTY } from '../constants/constants'
+import { createReducer} from "@reduxjs/toolkit"
+import { ADD_CART, LOAD_CART, INCREASE_CART_QTY,DECREASE_CART_QTY,UPDATE_CART_QTY,REMOVE_CART_ITEM } from '../constants/constants'
 
 
 
@@ -8,7 +8,7 @@ const cartReducer = createReducer({}, (builder) => {
 
     builder
         .addCase(ADD_CART, (state, payload) => {
-            const found = state.find(e => e.id == payload.action.id)
+            const found = state.find(e => e.id === payload.action.id)
             if (found) {
                 found.qty += payload.action.qty
             } else {
@@ -28,8 +28,16 @@ const cartReducer = createReducer({}, (builder) => {
             found.qty += 1;
             return state
         })
+
+
         .addCase(DECREASE_CART_QTY, (state, payload) => {
             const found = state.find(e => e.id === payload.action)
+
+            if(found.qty === 1) {
+                const filtered = state.filter(e => e.id !== payload.action) 
+                return filtered
+            }
+           
             found.qty -= 1;
             return state
         })
@@ -38,6 +46,12 @@ const cartReducer = createReducer({}, (builder) => {
             const found = state.find(e => e.id === payload.action.id)
             found.qty = payload.action.value;
             return state
+        })
+
+
+        .addCase(REMOVE_CART_ITEM, (state, payload) => {
+            const filtered = state.filter(e => e.id !== payload.action) 
+            return filtered
         })
 
 })

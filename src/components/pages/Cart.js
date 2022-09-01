@@ -2,11 +2,11 @@ import { Nav } from '../layouts/Nav'
 import { priceFormat } from '../helpers/helpers'
 import { connect } from 'react-redux'
 import { useEffect,useState } from 'react'
-import {increaseCartQty,decreaseCartQty,updateCartQty} from '../actions/cart'
+import {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem} from '../actions/cart'
 
 
 
-const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty}) => {
+const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem}) => {
 
     const [cartItems,setCartItems] = useState([])
 
@@ -16,11 +16,8 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty}) => {
     },[items])
 
     const qtyChangeHandler = (e,id) => {
-        
         const {value} = e.target
         updateCartQty(value,id)
-
-        
        
     }
 
@@ -57,14 +54,14 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty}) => {
                                         <div className="flex flex-col justify-between ml-4 flex-grow">
                                             <span className="font-bold text-sm">{e.name}</span>
                                             <span className="text-red-500 text-xs">{`type - ${e.product_type}`}</span>
-                                            <a href="#" className="font-semibold hover:text-[#ff0000] text-gray-500 text-xs">Remove</a>
+                                            <span  onClick={() => removeCartItem(e.id)} className="font-semibold hover:text-[#ff0000] text-gray-500 text-xs">Remove</span>
                                         </div>
                                     </div>
                                     <div className="flex justify-center w-1/5">
                                         <svg onClick={()=>decreaseCartQty(e.id)} className="fill-current text-gray-600 w-3" viewBox="0 0 448 512"><path d="M416 208H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h384c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
                                         </svg>
 
-                                        <input className="mx-2 border text-center w-8" type="text" onChange={(el) => qtyChangeHandler(el,e.id)} value={e.qty} />
+                                        <input className="mx-2 border text-center w-8" type="number" onChange={(el) => qtyChangeHandler(el,e.id)} value={e.qty} />
 
                                         <svg onClick={() => increaseCartQty(e.id)} className="fill-current text-gray-600 w-3" viewBox="0 0 448 512">
                                             <path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" />
@@ -126,4 +123,4 @@ const MapToStateProps = state => ({
 })
 
 
-export default connect(MapToStateProps, {increaseCartQty,decreaseCartQty,updateCartQty})(Cart)
+export default connect(MapToStateProps, {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem})(Cart)
