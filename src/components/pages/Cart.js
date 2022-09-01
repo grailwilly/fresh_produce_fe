@@ -2,10 +2,13 @@ import { priceFormat } from '../helpers/helpers'
 import { connect } from 'react-redux'
 import { useEffect,useState } from 'react'
 import {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem} from '../actions/cart'
+import { useNavigate } from 'react-router-dom'
 
-const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem}) => {
+const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem, user}) => {
 
     const [cartItems,setCartItems] = useState([])
+
+    const navigate = useNavigate()
 
 
     useEffect(() => {
@@ -17,6 +20,15 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
         updateCartQty(value,id)
        
     }
+
+
+    useEffect(() => {
+
+        if(!user.action) {
+            navigate('/sign-in')
+        }
+
+    },[user])
 
     return (
         <>
@@ -112,7 +124,8 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
 }
 
 const MapToStateProps = state => ({
-    items: state.cart
+    items: state.cart,
+    user: state.user
 })
 
 
