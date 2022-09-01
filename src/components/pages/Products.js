@@ -5,13 +5,13 @@ import { lazy, Suspense } from 'react';
 const BuyAbox = lazy(() => import("./products/BuyABox"));
 
 
-const Products = () => {
+const Products = ({user}) => {
 
   return (
     <>
-      <Nav />
+     
       <Suspense fallback={<Loading />}>
-        <BuyAbox />
+        <BuyAbox user={user}/>
       </Suspense>
 
     </>

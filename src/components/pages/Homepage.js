@@ -1,21 +1,9 @@
-import { Nav } from "../layouts/Nav";
-import react, { useState } from "react"
+
 import { Footer } from "../layouts/Footer";
-
-
-
-
-const Homepage = ({products}) => {
-
-
+const Homepage = () => {
 
   return (
     <>
-      {/* <Nav />
-      <div className="text-center text-5xl">
-        Homepage
-      </div> */}
-      <Nav />
       <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
         <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
           <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png"  alt="people smiling"/>
@@ -106,7 +94,7 @@ const Homepage = ({products}) => {
       <div className='overflow-y-hidden'>
         <div className="xl:mx-auto xl:container  xl:px-20 md:px-6 px-4 py-12">
           <div className="lg:flex items-center justify-center lg:space-x-12 2xl:space-x-6">
-            <div className>
+            <div>
               <p className="lg:text-4xl text-3xl font-extrabold leading-9 text-gray-800">Why choose us</p>
               <p className="text-lg leading-7 text-gray-600 mt-4 xl:w-7/12 w-full">We have worked directly with farmers, understanding their business and bringing their produce into grocery, retails, and manufacturers.</p>
               <div className="lg:hidden lg:w-3/5 xl:w-3/5 w-full lg:mt-0 mt-6">

@@ -1,11 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import CartIcon from './cart/CartIcon';
-export const Nav = () => {
+import { signOut } from '../actions/user';
+import { connect } from 'react-redux';
+
+
+const Nav = ({user,signOut}) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-
 
   return (
 
@@ -70,8 +72,9 @@ export const Nav = () => {
           </Link>
           <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
 
-            <CartIcon></CartIcon>
-
+            {user.action && <CartIcon></CartIcon>}
+            {user.action && <button onClick={signOut}>Logout</button>}
+            {!user.action && 
             <li>
               <Link
                 to="/sign-in"
@@ -82,6 +85,9 @@ export const Nav = () => {
                 Sign in
               </Link>
             </li>
+            }
+
+{!user.action && 
             <li>
               <Link
                 to="/register"
@@ -92,6 +98,7 @@ export const Nav = () => {
                 Sign up
               </Link>
             </li>
+          }
           </ul>
           <div className="ml-auto lg:hidden">
             <button
@@ -195,18 +202,21 @@ export const Nav = () => {
                         </a>
                       </li>
 
-                      <CartIcon></CartIcon>
+                      {user.action && <CartIcon></CartIcon>}
+                      {user.action && <button onClick={signOut}>Logout</button>}
 
-                      <li>
-                        <a
-                          href="/"
+                      {!user.action && <li>
+                        <Link
+                          to="/sign-in"
                           aria-label="Sign in"
                           title="Sign in"
                           className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-teal"
                         >
                           Sign in
-                        </a>
+                        </Link>
                       </li>
+                    }
+                   {!user.action &&
                       <li>
                         <Link
                           to="/register"
@@ -217,6 +227,7 @@ export const Nav = () => {
                           Sign up
                         </Link>
                       </li>
+                       }
                     </ul>
                   </nav>
                 </div>
@@ -228,3 +239,5 @@ export const Nav = () => {
     
   );
 };
+
+export default connect(null,{signOut})(Nav)

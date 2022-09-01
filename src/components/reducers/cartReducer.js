@@ -1,5 +1,5 @@
 import { createReducer} from "@reduxjs/toolkit"
-import { ADD_CART, LOAD_CART, INCREASE_CART_QTY,DECREASE_CART_QTY,UPDATE_CART_QTY,REMOVE_CART_ITEM } from '../constants/constants'
+import { ADD_CART, LOAD_CART, INCREASE_CART_QTY,DECREASE_CART_QTY,UPDATE_CART_QTY,REMOVE_CART_ITEM, SIGN_OUT } from '../constants/constants'
 
 
 
@@ -53,6 +53,14 @@ const cartReducer = createReducer({}, (builder) => {
             const filtered = state.filter(e => e.id !== payload.action) 
             return filtered
         })
+
+
+        .addCase(SIGN_OUT, (state, payload) => {
+            state = []
+            return state
+        })
+
+
 
 })
 

@@ -2,12 +2,14 @@ import { configureStore } from "@reduxjs/toolkit";
 import productReducers from '../reducers/productReducers'
 import productBoxReducer from '../reducers/productBoxReducer'
 import cartReducer from '../reducers/cartReducer'
+import userReducer from "../reducers/userReducer";
 
 
 const preloadedState = {
     products: [],
     productBox: [],
-    cart:[]
+    cart:[],
+    user:{}
     
 }
 
@@ -18,6 +20,7 @@ export const store = configureStore({
         products:productReducers,
         productBox: productBoxReducer,
         cart: cartReducer,
+        user: userReducer
     },
 
 })
