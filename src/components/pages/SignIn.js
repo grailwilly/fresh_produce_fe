@@ -1,9 +1,12 @@
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signIn } from '../actions/user'
 
-const SignIn = ({ signIn }) => {
+
+const SignIn = ({ signIn,user }) => {
+
+    const navigate = useNavigate()
 
 
     const [showpass, setShowPass] = useState(false)
@@ -14,6 +17,14 @@ const SignIn = ({ signIn }) => {
 
     })
 
+
+    useEffect(() => {
+
+        if(user.action) {
+            navigate('/products')
+        }
+
+    },[user])
 
     const onChangeHandler = (e) => {
         const { value, name } = e.target;
@@ -27,6 +38,8 @@ const SignIn = ({ signIn }) => {
 
     const loginHandler = (e) => {
         signIn(userInfo)
+
+   
     }
 
     return (
@@ -133,4 +146,8 @@ const SignIn = ({ signIn }) => {
     )
 }
 
-export default connect(null, { signIn })(SignIn)
+const MapToStateProps = state => ({
+    user:state.user
+})
+
+export default connect(MapToStateProps, { signIn })(SignIn)

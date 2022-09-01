@@ -1,12 +1,21 @@
-import {useState} from "react";
+import {useState,useEffect} from "react";
 import { register } from "../actions/user";
 import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
-export const Register = ({register}) => {
+export const Register = ({register,user}) => {
 
-
+const navigate = useNavigate()
   const [showpass, setShowPass] = useState(false)
+
+
+  useEffect(() => {
+
+    if(user.action) {
+        navigate('/products')
+    }
+
+},[user])
 
   const [userInfo,setUserInfo] = useState({
     fName : '',
@@ -175,5 +184,9 @@ export const Register = ({register}) => {
   );
 }
 
+const MapToStateProps = state => ({
+    user: state.user
+})
 
-export default connect(null,{register})(Register)
+
+export default connect(MapToStateProps,{register})(Register)

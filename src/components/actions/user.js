@@ -1,4 +1,4 @@
-import { REGISTER_USER,LOGIN_USER } from "../constants/constants"
+import { REGISTER_USER,LOGIN_USER,RELOAD_USER,SIGN_OUT } from "../constants/constants"
 import axios from "axios"
 import { baseURL } from "../constants/constants"
 
@@ -80,6 +80,26 @@ export const signIn = (loginInfo) => async dispatch => {
             status: err.response.status,
          })
     }
+
+}
+
+export const reloadUser = () => dispatch => {
+
+    const userInfo = JSON.parse(window.localStorage.getItem('user'))
+    dispatch({
+        type: RELOAD_USER,
+         action: userInfo
+    })
+
+}
+
+export const signOut = () => dispatch => {
+
+    storeLocal({},'remove')
+
+    dispatch({
+        type: SIGN_OUT
+    })
 
 }
 

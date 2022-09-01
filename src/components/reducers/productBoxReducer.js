@@ -1,5 +1,5 @@
 import { createReducer } from "@reduxjs/toolkit";
-import { SET_BOX_DATA, INCREASE_QUANTITY, DECREASE_QUANTITY,UPDATE_QTY } from "../constants/constants";
+import { SET_BOX_DATA, INCREASE_QUANTITY, DECREASE_QUANTITY,UPDATE_QTY,SIGN_OUT } from "../constants/constants";
 
 
 const reducer = createReducer({}, (builder) => {
@@ -38,6 +38,12 @@ const reducer = createReducer({}, (builder) => {
       const box = state.find(e => e.id === payload.action.id)
       box.qty = +payload.action.value
     })
+
+
+    .addCase(SIGN_OUT, (state, payload) => {
+      state = []
+      return state
+  })
 })
 
 export default reducer;

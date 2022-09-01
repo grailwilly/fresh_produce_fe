@@ -1,4 +1,4 @@
-import { REGISTER_USER,LOGIN_USER } from "../constants/constants";
+import { REGISTER_USER,LOGIN_USER, RELOAD_USER,SIGN_OUT } from "../constants/constants";
 import { createReducer } from "@reduxjs/toolkit";
 
 
@@ -18,6 +18,15 @@ const user = createReducer({}, builder => {
             state = {headers,status,action}
             return state;
            
+        })
+        .addCase(RELOAD_USER,(state, payload) => {
+            const {headers,status,action} = payload;
+            state = {headers,status,action}
+            return state;
+        })
+        .addCase(SIGN_OUT,(state, payload) => {
+            state = {}
+            return state;
         })
 
 })
