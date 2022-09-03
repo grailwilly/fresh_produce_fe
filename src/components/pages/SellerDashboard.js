@@ -4,7 +4,9 @@ import Sidebar from "../layouts/Sidebar";
 const SellerDashboard = () => {
     return (
       <div className="flex">
-        <Sidebar />
+        <aside className="h-screen sticky top-0">
+          <Sidebar />
+        </aside>
         <div className="container mx-auto mt-12">
           <div className="flex mb-4">
             <div className="w-1/.7">
