@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signIn } from '../actions/user'
+import { loadCartItems } from '../actions/cart'
 
 
-const SignIn = ({ signIn,user }) => {
+const SignIn = ({ signIn,user,loadCartItems }) => {
 
     const navigate = useNavigate()
 
@@ -127,4 +128,4 @@ const MapToStateProps = state => ({
     user:state.user
 })
 
-export default connect(MapToStateProps, { signIn })(SignIn)
+export default connect(MapToStateProps, { signIn,loadCartItems })(SignIn)
