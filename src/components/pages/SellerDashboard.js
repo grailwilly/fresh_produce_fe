@@ -192,7 +192,7 @@ const SellerDashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="1/4">
+            <div className="w-1/4">
               <div>
                 <p>Today's Best seller</p>  
               </div>
