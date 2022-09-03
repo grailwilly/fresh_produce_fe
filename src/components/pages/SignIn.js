@@ -2,9 +2,10 @@ import { useEffect, useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signIn } from '../actions/user'
+import { loadCartItems } from '../actions/cart'
 
 
-const SignIn = ({ signIn,user }) => {
+const SignIn = ({ signIn,user,loadCartItems }) => {
 
     const navigate = useNavigate()
 
@@ -92,7 +93,7 @@ const SignIn = ({ signIn,user }) => {
                 </div>
               </div>
               <div className="mt-8">
-                <button onClick={loginHandler} role="button" className="bg-teal focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+                <button onClick={loginHandler} role="button" className="bg-teal focus:ring-2 focus:ring-offset-2  text-sm font-semibold leading-none text-white focus:outline-none  border rounded hover:bg-dark-green py-4 w-full">
                   Sign in
                 </button>
               </div>
@@ -127,4 +128,4 @@ const MapToStateProps = state => ({
     user:state.user
 })
 
-export default connect(MapToStateProps, { signIn })(SignIn)
+export default connect(MapToStateProps, { signIn,loadCartItems })(SignIn)

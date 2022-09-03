@@ -142,7 +142,7 @@ const navigate = useNavigate()
             </div>
           </div>
           <div className="mt-8">
-            <button onClick={registerHandler} role="button" className="bg-teal focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">
+            <button onClick={registerHandler} role="button" className="bg-teal focus:ring-2 focus:ring-offset-2  text-sm font-semibold leading-none text-white focus:outline-none  hover:bg-dark-green border rounded py-4 w-full">
               Create my account
             </button>
           </div>

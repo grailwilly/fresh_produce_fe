@@ -28,7 +28,7 @@ const BuyABox = ({ addCart, productItems, productBox, cardData, increaseQty, dec
 
   const addCartHandler = (e) => {
 
-    addCart(cardData.find(d => d.id == e))
+    addCart(cardData.find(d => d.id == e),user)
 
   }
 
@@ -52,7 +52,7 @@ const BuyABox = ({ addCart, productItems, productBox, cardData, increaseQty, dec
                     <div key={i} className="flex flex-col items-center justify-center w-full max-w-lg mx-auto border border-teal p-5 rounded">
                       <img className="object-cover w-full rounded-md " src={e.image} alt="box" />
                       <h4 className="mt-2 text-lg font-medium text-gray-700 dark:text-gray-200 text-cus-sm">{e.name}</h4>
-                      <p className="my-2 text-blue-500 text-xs">{`${priceFormat(e.price)} per box`}</p>
+                      <p className="my-2 text-teal text-xs">{`${priceFormat(e.price)} per box`}</p>
                       {user.action && <> 
                       <div className="custom-number-input h-10 w-32">
         

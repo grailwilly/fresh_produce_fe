@@ -1,7 +1,7 @@
 import { createReducer} from "@reduxjs/toolkit"
-import { ADD_CART, LOAD_CART, INCREASE_CART_QTY,DECREASE_CART_QTY,UPDATE_CART_QTY,REMOVE_CART_ITEM, SIGN_OUT } from '../constants/constants'
-
-
+import { ADD_CART, LOAD_CART, INCREASE_CART_QTY,DECREASE_CART_QTY,UPDATE_CART_QTY,REMOVE_CART_ITEM, SIGN_OUT,LOAD_CART_INIT } from '../constants/constants'
+import axios from "axios"
+import { baseURL } from "../constants/constants"
 
 
 const cartReducer = createReducer({}, (builder) => {
@@ -59,6 +59,12 @@ const cartReducer = createReducer({}, (builder) => {
             state = []
             return state
         })
+
+        .addCase(LOAD_CART_INIT, (state, payload) => {
+            state = payload.action
+            return state
+        })
+
 
 
 

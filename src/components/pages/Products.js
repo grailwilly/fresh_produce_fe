@@ -1,11 +1,12 @@
-import { Nav } from "../layouts/Nav"
 import Loading from "../layouts/Loading";
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useEffect } from 'react';
+
 
 const BuyAbox = lazy(() => import("./products/BuyABox"));
 
 
 const Products = ({user}) => {
+
 
   return (
     <>
