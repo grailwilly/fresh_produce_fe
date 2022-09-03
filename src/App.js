@@ -1,7 +1,7 @@
 import Homepage from "./components/pages/Homepage";
 import Register from "./components/pages/Register";
 import SignIn from "./components/pages/SignIn";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes,useLocation } from "react-router-dom";
 import Products from './components/pages/Products'
 import Cart from "./components/pages/Cart";
 import Nav from "./components/layouts/Nav";
@@ -11,16 +11,22 @@ import { useEffect } from "react";
 import { reloadUser } from "./components/actions/user";
 import { loadCartItems } from "./components/actions/cart";
 
-function App({ user, reloadUser, loadCartItems }) {
+function App({ user, reloadUser, loadCartItems}) {
+
+
+  const location = useLocation()
 
 
   useEffect(() => {
 
     if (JSON.parse(window.localStorage.getItem('user'))) {
       reloadUser()
+       const storageData = JSON.parse(window.localStorage.getItem('user'))
+       loadCartItems(storageData.headers)
     }
 
   }, [])
+
 
 
   useEffect(() => {
@@ -32,7 +38,7 @@ function App({ user, reloadUser, loadCartItems }) {
 
   return (
     <>
-      <Nav user={user} />
+      {location.pathname !== '/seller-dashboard' && <Nav user={user} /> }
       <Routes>
         <Route path='/' element={<Homepage></Homepage>} />
         <Route path='/register' element={<Register></Register>} />

@@ -2,15 +2,46 @@ import { ADD_CART, UPDATE_CART_QTY, DECREASE_CART_QTY, INCREASE_CART_QTY, REMOVE
 import axios from "axios";
 import { baseURL } from "../constants/constants";
 
-export const addCart = (item) => dispatch => {
 
-    dispatch({
-        type: ADD_CART,
-        action: item
 
-    })
+export const addCart = (item, user) => async dispatch => {
+
+    let headers = user.action.headers
+
+    if(!headers) {
+        headers =  user.headers
+    }
+
+    try {
+
+        const cartData = {
+            qty: item.qty,
+            user_id: item.user_id,
+            product_id: item.id
+        }
+
+        console.log(cartData)
+
+        const url = `${baseURL}v1/cart`
+
+        await axios({
+            method: 'post',
+            url,
+            headers,
+           data:cartData
+
+        })
+
+        dispatch({
+            type: ADD_CART,
+            action: item
+        })
+
+    } catch (err) {
+        console.error(err.message)
+
+    }
 }
-
 
 export const increaseCartQty = (id) => dispatch => {
 
@@ -34,7 +65,13 @@ export const updateCartQty = (value, id) => dispatch => {
     })
 }
 
+
 export const removeCartItem = (id) => dispatch => {
+
+
+    const url = `${baseURL}v1/cart/${id}`
+
+
     dispatch({
         type: REMOVE_CART_ITEM,
         action: id
@@ -54,13 +91,13 @@ export const loadCartItems = (user) => async dispatch => {
     try {
         const productsReq = await axios({
             method: 'get',
-            url:productsUrl,
+            url: productsUrl,
         })
 
         const cartRes = await axios({
             method: 'get',
             headers,
-            url:cartUrl
+            url: cartUrl
         })
 
         const test = cartRes.data.map(e => {

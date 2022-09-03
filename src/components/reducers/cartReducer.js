@@ -61,7 +61,6 @@ const cartReducer = createReducer({}, (builder) => {
         })
 
         .addCase(LOAD_CART_INIT, (state, payload) => {
-            console.log('test')
             state = payload.action
             return state
         })
