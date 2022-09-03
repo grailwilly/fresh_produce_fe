@@ -8,8 +8,8 @@ export const addCart = (item, user) => async dispatch => {
 
     let headers = user.action.headers
 
-    if(!headers) {
-        headers =  user.headers
+    if (!headers) {
+        headers = user.headers
     }
 
     try {
@@ -28,7 +28,7 @@ export const addCart = (item, user) => async dispatch => {
             method: 'post',
             url,
             headers,
-           data:cartData
+            data: cartData
 
         })
 
@@ -66,16 +66,36 @@ export const updateCartQty = (value, id) => dispatch => {
 }
 
 
-export const removeCartItem = (id) => dispatch => {
+export const removeCartItem = (id, user) => async dispatch => {
+
+    let headers = user.action.headers
+
+    if (!headers) {
+        headers = user.headers
+    }
+
+    console.log(id)
 
 
-    const url = `${baseURL}v1/cart/${id}`
+    try {
 
+        const url = `${baseURL}v1/cart/${id}`
 
-    dispatch({
-        type: REMOVE_CART_ITEM,
-        action: id
-    })
+        await axios({
+            method:'delete',
+            url,
+            headers
+        })
+
+        dispatch({
+            type: REMOVE_CART_ITEM,
+            action: id
+        })
+
+    } catch (err) {
+        console.error(err.message)
+
+    }
 }
 
 
@@ -85,8 +105,6 @@ export const loadCartItems = (user) => async dispatch => {
     const headers = user
     const productsUrl = `${baseURL}v1/products`
     const cartUrl = `${baseURL}v1/cart`
-
-
 
     try {
         const productsReq = await axios({
@@ -106,6 +124,8 @@ export const loadCartItems = (user) => async dispatch => {
                 ...found,
                 ...e
             }
+
+
         })
 
         dispatch({

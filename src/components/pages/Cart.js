@@ -59,7 +59,7 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
                                         <div className="flex flex-col justify-between ml-4 flex-grow">
                                             <span className="font-bold text-sm">{e.name}</span>
                                             <span className="text-red-500 text-xs">{`type - ${e.product_type}`}</span>
-                                            <span  onClick={() => removeCartItem(e.id)} className="font-semibold hover:text-[#ff0000] text-gray-500 text-xs">Remove</span>
+                                            <span  onClick={() => removeCartItem(e.id,user)} className="font-semibold hover:text-[#ff0000] text-gray-500 text-xs">Remove</span>
                                         </div>
                                     </div>
                                     <div className="flex justify-center w-1/5">
