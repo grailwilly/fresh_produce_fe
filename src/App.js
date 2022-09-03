@@ -1,28 +1,30 @@
 import Homepage from "./components/pages/Homepage";
 import Register from "./components/pages/Register";
 import SignIn from "./components/pages/SignIn";
-import { Route, Routes,useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Products from './components/pages/Products'
 import Cart from "./components/pages/Cart";
 import Nav from "./components/layouts/Nav";
 import SellerDashboard from "./components/pages/SellerDashboard";
 import { connect } from "react-redux";
-import { useEffect } from "react";
+import { useEffect,useState } from "react";
 import { reloadUser } from "./components/actions/user";
 import { loadCartItems } from "./components/actions/cart";
+import LoadBar from "./components/layouts/LoadBar";
 
-function App({ user, reloadUser, loadCartItems}) {
+function App({ user, reloadUser, loadCartItems }) {
 
 
   const location = useLocation()
 
+  
 
   useEffect(() => {
 
     if (JSON.parse(window.localStorage.getItem('user'))) {
       reloadUser()
-       const storageData = JSON.parse(window.localStorage.getItem('user'))
-       loadCartItems(storageData.headers)
+      const storageData = JSON.parse(window.localStorage.getItem('user'))
+      loadCartItems(storageData.headers)
     }
 
   }, [])
@@ -38,7 +40,11 @@ function App({ user, reloadUser, loadCartItems}) {
 
   return (
     <>
-      {location.pathname !== '/seller-dashboard' && <Nav user={user} /> }
+
+ 
+  
+      <LoadBar></LoadBar>
+      {location.pathname !== '/seller-dashboard' && <Nav user={user} />}
       <Routes>
         <Route path='/' element={<Homepage></Homepage>} />
         <Route path='/register' element={<Register></Register>} />
