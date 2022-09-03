@@ -8,8 +8,8 @@ const SellerDashboard = () => {
           <Sidebar />
         </aside>
         <div className="container mx-auto mt-12">
-          <div className="flex mb-4">
-            <div className="w-1/.7">
+          <div>
+            <div>
               <div className="w-full px-4 py-5 bg-teal rounded-3xl shadow">
                 <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-3">
                   <div className="ml-10 border-r border-r-white text-white">
@@ -192,14 +192,14 @@ const SellerDashboard = () => {
                 </div>
               </div>
             </div>
-            <div className="w-1/4">
+            {/* <div className="w-1/4">
               <div>
                 <p>Today's Best seller</p>  
               </div>
               <div>
                 <p>Almost Out of Stock</p>  
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
