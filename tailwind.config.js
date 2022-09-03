@@ -3,6 +3,7 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
+
     extend: {
       colors: {
         'teal': '#009688',
@@ -62,6 +63,7 @@ module.exports = {
        },
       },
      },
+
     },
   },
   plugins: [],
