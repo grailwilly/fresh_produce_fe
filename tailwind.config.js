@@ -9,6 +9,7 @@ module.exports = {
       'dark-green': '#104034',
       'white': '#fff',
       'dk-white':'#9c9897',
+      'emerald':"#065f46",
       'gray': {
         50:'#f9fafb',
         100:'#f3f4f6',
