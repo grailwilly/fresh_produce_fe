@@ -186,20 +186,6 @@ const SellerDashboard = () => {
                       <span className="absolute bottom-0 text-xs font-bold">Dec</span>
                     </div>
                   </div>
-                  <div className="flex w-full mt-3">
-                    <div className="flex items-center ml-auto">
-                      <span className="block w-4 h-4 bg-indigo-400"></span>
-                      <span className="ml-1 text-xs font-medium">Existing</span>
-                    </div>
-                    <div className="flex items-center ml-4">
-                      <span className="block w-4 h-4 bg-indigo-300"></span>
-                      <span className="ml-1 text-xs font-medium">Upgrades</span>
-                    </div>
-                    <div className="flex items-center ml-4">
-                      <span className="block w-4 h-4 bg-indigo-200"></span>
-                      <span className="ml-1 text-xs font-medium">New</span>
-                    </div>
-                  </div>
                 </div>
                 </div>
               </div>
