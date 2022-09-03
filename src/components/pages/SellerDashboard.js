@@ -152,11 +152,19 @@ const SellerDashboard = () => {
           </div>
         </div>
         <div className="container mx-auto mt-12">
-          <div className="grid gap-6 grid-cols-2">
-            <div>
+          <div className="flex mb-4">
+            <div className="w-1/.7">
               <div className="w-full px-4 py-5 bg-teal rounded-lg shadow">
-                <div>
-                  
+                <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-3">
+                  <div>
+                    <p>Total Sales</p>
+                  </div>
+                  <div>
+                    <p>Visitor</p>
+                  </div>
+                  <div>
+                    <p>CVR</p>
+                  </div>
                 </div>
               </div>
               <h1 className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">Important Today</h1>
@@ -195,8 +203,13 @@ const SellerDashboard = () => {
                 </div>
               </div>
             </div>
-            <div>
-              column 2
+            <div className="1/4">
+              <div>
+                <p>Today's Best seller</p>  
+              </div>
+              <div>
+                <p>Almost Out of Stock</p>  
+              </div>
             </div>
           </div>
         </div>
