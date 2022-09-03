@@ -1,209 +1,198 @@
 import React from "react";
+import Sidebar from "../layouts/Sidebar";
 
 const SellerDashboard = () => {
     return (
       <div className="flex">
-        <div className="flex flex-col h-screen p-3 bg-white shadow w-60">
-          <div className="space-y-3">
-            <div className="flex items-center">
-              <h2 className="text-xl font-bold">Dashboard</h2>
-            </div>
-            <div className="flex-1">
-              <ul className="pt-2 pb-4 space-y-1 text-sm">
-                <li className="rounded-sm">
-                  <a
-                    href="#"
-                    className="flex items-center p-2 space-x-3 rounded-md"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                      />
-                    </svg>
-                    <span>Home</span>
-                  </a>
-                </li>
-                <li className="rounded-sm">
-                    <a
-                      href="#"
-                      className="flex items-center p-2 space-x-3 rounded-md"
-                    >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
-                      />
-                    </svg>
-                    <span>Inbox</span>
-                  </a>
-                </li>
-                <li className="rounded-sm">
-                  <a
-                    href="#"
-                    className="flex items-center p-2 space-x-3 rounded-md"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                      />
-                    </svg>
-                    <span>Orders</span>
-                  </a>
-                </li>
-                <li className="rounded-sm">
-                  <a
-                    href="#"
-                    className="flex items-center p-2 space-x-3 rounded-md"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"
-                      />
-                    </svg>
-                    <span>Products</span>
-                  </a>
-                </li>
-                <li className="rounded-sm">
-                  <a
-                    href="#"
-                    className="flex items-center p-2 space-x-3 rounded-md"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"
-                      />
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                      />
-                    </svg>
-                    <span>Settings</span>
-                  </a>
-                </li>
-                <li className="rounded-sm">
-                  <a
-                    href="#"
-                    className="flex items-center p-2 space-x-3 rounded-md"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="w-6 h-6"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      strokeWidth={2}
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
-                      />
-                    </svg>
-                    <span>Logout</span>
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        <aside className="h-screen sticky top-0">
+          <Sidebar />
+        </aside>
         <div className="container mx-auto mt-12">
           <div className="flex mb-4">
             <div className="w-1/.7">
-              <div className="w-full px-4 py-5 bg-teal rounded-lg shadow">
+              <div className="w-full px-4 py-5 bg-teal rounded-3xl shadow">
                 <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-3">
-                  <div>
-                    <p>Total Sales</p>
+                  <div className="ml-10 border-r border-r-white text-white">
+                    <div className="grid grid-cols-2">
+                      <img src="https://img.icons8.com/pastel-glyph/50/000000/wallet--v1.png"/>
+                      <img src="https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-graph-investment-kiranshastry-lineal-kiranshastry.png"/>
+                    </div>
+                    <div className="grid grid-cols-2 py-5">
+                      <div>
+                        <p>Total Sales</p>
+                        <p>789</p>
+                      </div>
+                      <div>
+                        <img src="https://img.icons8.com/ios/20/000000/squiggly-line.png"/>
+                        +4%
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p>Visitor</p>
+                  <div className="ml-10 border-r border-r-white text-white">
+                    <div className="grid grid-cols-2">
+                      <img src="https://img.icons8.com/external-line-icons-royyan-wijaya/50/000000/external-eyes-whatsername-medical-line-line-icons-royyan-wijaya.png"/>
+                      <img src="https://img.icons8.com/external-kmg-design-detailed-outline-kmg-design/64/000000/external-graph-business-finance-kmg-design-detailed-outline-kmg-design.png"/>
+                    </div>
+                    <div className="grid grid-cols-2 py-5">
+                      <div>
+                        <p>Visitor</p>
+                        <p>12K</p>
+                      </div>
+                      <div>
+                        <img src="https://img.icons8.com/ios/20/000000/squiggly-line.png"/>
+                        +2%
+                      </div>
+                    </div>
                   </div>
-                  <div>
-                    <p>CVR</p>
+                  <div className="ml-10 text-white">
+                    <div className="grid grid-cols-2">
+                      <img src="https://img.icons8.com/ios/50/000000/empty-filter.png"/>
+                      <img src="https://img.icons8.com/external-vitaliy-gorbachev-lineal-vitaly-gorbachev/60/000000/external-graph-business-vitaliy-gorbachev-lineal-vitaly-gorbachev.png"/>
+                    </div>
+                    <div className="grid grid-cols-2 py-5">
+                      <div>
+                        <p>CVR</p>
+                        <p>8,11</p>
+                      </div>
+                      <div>
+                        <img src="https://img.icons8.com/ios/20/000000/squiggly-line.png"/>
+                        +3%
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
-              <h1 className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">Important Today</h1>
-              <p className="ml-2">Activities you need to monitor to maintain buyer satisfaction</p>
+              <h1 className="ml-2 mt-10 text-xl font-bold tracking-wide text-gray-900 uppercase">Important Today</h1>
+              <p className="ml-2 mb-5">Activities you need to monitor to maintain buyer satisfaction</p>
               <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-3">
-                <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+                <div className="bg-white rounded-3xl shadow p-6 w-64">
                   <div className="text-sm font-medium text-gray-500 truncate">
                     New order
                   </div>
-                  <div className="mt-1 text-3xl font-semibold text-gray-900">
-                    12,00
+                  <div className="grid grid-cols-2">
+                    <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/000000/external-Order-round-mobile-ui-set-flat-icons-inmotus-design.png"/>
+                    <p className="mt-1 text-3xl font-semibold text-gray-900">200</p>
                   </div>
+                  <p>Potential +Php 1,000,000</p>
                 </div>
-                <div className="w-full px-4 py-5 bg-white rounded-md shadow">
+                <div className="bg-white rounded-3xl shadow p-6 w-64">
                   <div className="text-sm font-medium text-gray-500 truncate">
                     Ready to ship
                   </div>
-                  <div className="mt-1 text-3xl font-semibold text-gray-900">
-                    $ 450k
+                  <div className="grid grid-cols-2">
+                    <img src="https://img.icons8.com/color/50/000000/buy--v1.png"/>
+                    <p className="mt-1 text-3xl font-semibold text-gray-900">300</p>
                   </div>
+                  <p>Potential +Php 100,000</p>
                 </div>
-                <div className="w-full px-4 py-5 bg-white rounded-lg shadow">
+                <div className="bg-white rounded-3xl shadow p-6 w-64">
                   <div className="text-sm font-medium text-gray-500 truncate">
-                    In Delivery
+                    In delivery
                   </div>
-                  <div className="mt-1 text-3xl font-semibold text-gray-900">
-                    20k
+                  <div className="grid grid-cols-2">
+                    <img src="https://img.icons8.com/color/48/000000/shipped.png"/>
+                    <p className="mt-1 text-3xl font-semibold text-gray-900">300</p>
                   </div>
+                  <p>Potential +Php 500,000</p>
                 </div>
               </div>
               <div>
                 <h1 className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">Summary Revenue</h1>
-                <p className="ml-2">Last update: 2 September 2022 13:00</p>
                 <div>
-                  <img src="https://cdn.dribbble.com/users/2443050/screenshots/16964305/media/85c1bbd7ffe380b268f80d149f3ebcac.png?compress=1&resize=1000x750&vertical=top" />
+                  <div className="flex flex-col items-center w-full max-w-screen-md p-6 pb-6 bg-white rounded-lg shadow-xl sm:p-8">
+		                <h2 className="text-xl font-bold">Monthly Revenue</h2>
+		                <span className="text-sm font-semibold text-gray-500">2022</span>
+		                <div className="flex items-end flex-grow w-full mt-2 space-x-2 sm:space-x-3">
+			                <div className="relative flex flex-col items-center flex-grow pb-5 group">
+				                <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$37,500</span>
+				                <div className="relative flex justify-center w-full h-8 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-6 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-16 bg-gold"></div>
+                        <span className="absolute bottom-0 text-xs font-bold">Jan</span>
+			                </div>
+                      <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$45,000</span>
+                        <div className="relative flex justify-center w-full h-10 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-6 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-20 bg-gold"></div>
+                        <span className="absolute bottom-0 text-xs font-bold">Feb</span>
+                      </div>
+                      <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$47,500</span>
+                        <div className="relative flex justify-center w-full h-10 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-8 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-20 bg-gold"></div>
+                        <span className="absolute bottom-0 text-xs font-bold">Mar</span>
+                      </div>
+                      <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$50,000</span>
+                        <div className="relative flex justify-center w-full h-10 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-6 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-24 bg-gold"></div>
+                        <span className="absolute bottom-0 text-xs font-bold">Apr</span>
+                      </div>
+                      <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$47,500</span>
+                        <div className="relative flex justify-center w-full h-10 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-8 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-20 bg-gold"></div>
+                        <span className="absolute bottom-0 text-xs font-bold">May</span>
+                      </div>
+                      <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                        <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$55,000</span>
+                        <div className="relative flex justify-center w-full h-12 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-8 bg-gold"></div>
+                        <div className="relative flex justify-center w-full h-24 bg-gold"></div>
+                        <span className="absolute bottom-0 text-xs font-bold">Jun</span>
+                      </div>
+                    <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                      <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$60,000</span>
+                      <div className="relative flex justify-center w-full h-12 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-16 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-20 bg-gold"></div>
+                      <span className="absolute bottom-0 text-xs font-bold">Jul</span>
+                    </div>
+                    <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                      <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$57,500</span>
+                      <div className="relative flex justify-center w-full h-12 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-10 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-24 bg-gold"></div>
+                      <span className="absolute bottom-0 text-xs font-bold">Aug</span>
+                    </div>
+                    <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                      <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$67,500</span>
+                      <div className="relative flex justify-center w-full h-12 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-10 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-32 bg-gold"></div>
+                      <span className="absolute bottom-0 text-xs font-bold">Sep</span>
+                    </div>
+                    <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                      <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$65,000</span>
+                      <div className="relative flex justify-center w-full h-12 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-12 bg-gold"></div>
+                      <div className="relative flex justify-center w-full bg-gold h-28"></div>
+                      <span className="absolute bottom-0 text-xs font-bold">Oct</span>
+                    </div>
+                    <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                      <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$70,000</span>
+                      <div className="relative flex justify-center w-full h-8 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-8 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-40 bg-gold"></div>
+                      <span className="absolute bottom-0 text-xs font-bold">Nov</span>
+                    </div>
+                    <div className="relative flex flex-col items-center flex-grow pb-5 group">
+                      <span className="absolute top-0 hidden -mt-6 text-xs font-bold group-hover:block">$75,000</span>
+                      <div className="relative flex justify-center w-full h-12 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-8 bg-gold"></div>
+                      <div className="relative flex justify-center w-full h-40 bg-gold"></div>
+                      <span className="absolute bottom-0 text-xs font-bold">Dec</span>
+                    </div>
+                  </div>
+                </div>
                 </div>
               </div>
             </div>
-            <div className="1/4">
+            <div className="w-1/4">
               <div>
                 <p>Today's Best seller</p>  
               </div>
