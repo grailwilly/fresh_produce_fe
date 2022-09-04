@@ -20,11 +20,9 @@ export const addCart = (item, user) => async dispatch => {
             product_id: item.id
         }
 
-        console.log(cartData)
-
         const url = `${baseURL}v1/cart`
 
-        await axios({
+       const resData =  await axios({
             method: 'post',
             url,
             headers,
@@ -32,9 +30,16 @@ export const addCart = (item, user) => async dispatch => {
 
         })
 
+        const formattedProducts = {
+            ...item,
+            id:resData.data
+        }
+
+        console.log(formattedProducts)
+
         dispatch({
             type: ADD_CART,
-            action: item
+            action: formattedProducts
         })
 
     } catch (err) {
@@ -101,6 +106,7 @@ export const removeCartItem = (id, user) => async dispatch => {
 
 export const loadCartItems = (user) => async dispatch => {
 
+    console.log('loaded')
 
     const headers = user
     const productsUrl = `${baseURL}v1/products`
@@ -118,19 +124,19 @@ export const loadCartItems = (user) => async dispatch => {
             url: cartUrl
         })
 
-        const test = cartRes.data.map(e => {
-            const found = productsReq.data.find(el => el.id === e.id)
+        const formattedProducts = cartRes.data.map(e => {
+            const found = productsReq.data.find(el => el.id === e.product_id)
             return {
                 ...found,
                 ...e
             }
 
-
         })
 
+  
         dispatch({
             type: LOAD_CART_INIT,
-            action: test
+            action: formattedProducts
         })
 
     } catch (err) {

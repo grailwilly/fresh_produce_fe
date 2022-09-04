@@ -1,9 +1,10 @@
 import { useEffect,useState } from "react";
 import { useLocation } from "react-router-dom";
+import { connect } from "react-redux";
 
 
 
-const LoadBar = () => {
+const LoadBar = ({user,cart}) => {
     const [bar,setBar] = useState('animate-bar')
     const location = useLocation()
 
@@ -16,7 +17,7 @@ useEffect(() => {
 
     return () => {clearTimeout(id)}
 
-},[location.pathname])
+},[location.pathname,cart,user])
 
 
 
@@ -27,4 +28,10 @@ useEffect(() => {
   )
 }
 
-export default LoadBar
+
+const MapToStateProps = state => ({
+  cart: state.cart,
+  user: state.user
+})
+
+export default connect(MapToStateProps)(LoadBar)

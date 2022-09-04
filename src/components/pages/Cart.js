@@ -1,10 +1,10 @@
 import { priceFormat } from '../helpers/helpers'
 import { connect } from 'react-redux'
 import { useEffect,useState } from 'react'
-import {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem} from '../actions/cart'
+import {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem,loadCartItems} from '../actions/cart'
 import { useNavigate } from 'react-router-dom'
 
-const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem, user}) => {
+const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem, user,loadCartItems}) => {
 
     const [cartItems,setCartItems] = useState([])
 
@@ -13,7 +13,12 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
 
     useEffect(() => {
         setCartItems(items)
+       
     },[items])
+
+    useEffect(() => {
+        loadCartItems()
+    },[])
 
     const qtyChangeHandler = (e,id) => {
         const {value} = e.target
@@ -26,6 +31,8 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
 
         if(!user.action) {
             navigate('/sign-in')
+        } else {
+            navigate('/cart')
         }
 
     },[user])
@@ -129,4 +136,4 @@ const MapToStateProps = state => ({
 })
 
 
-export default connect(MapToStateProps, {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem})(Cart)
+export default connect(MapToStateProps, {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem,loadCartItems})(Cart)
