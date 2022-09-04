@@ -5,6 +5,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Products from './components/pages/Products'
 import Cart from "./components/pages/Cart";
 import Nav from "./components/layouts/Nav";
+import Wholesale from "./components/pages/Wholesale";
 import SellerDashboard from "./components/pages/SellerDashboard";
 import { connect } from "react-redux";
 import { useEffect,useState } from "react";
@@ -51,6 +52,7 @@ function App({ user, reloadUser, loadCartItems }) {
         <Route path='/sign-in' element={<SignIn></SignIn>} />
         <Route path='/products' element={<Products user={user} />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/wholesale' element={<Wholesale />} />
         <Route path='/seller-dashboard' element={<SellerDashboard />} />
       </Routes>
     </>
