@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { signIn } from '../actions/user'
 import { loadCartItems } from '../actions/cart'
+import { Footer } from '../layouts/Footer'
 
 
 const SignIn = ({ signIn,user,loadCartItems }) => {
@@ -120,6 +121,7 @@ const SignIn = ({ signIn,user,loadCartItems }) => {
             </div>
           </div>
         </div>
+        <Footer />
       </>
     )
 }

@@ -2,6 +2,7 @@ import {useState,useEffect} from "react";
 import { register } from "../actions/user";
 import { connect } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
+import { Footer } from "../layouts/Footer";
 
 export const Register = ({register,user}) => {
 
@@ -169,6 +170,7 @@ const navigate = useNavigate()
         </div>
       </div>
     </div>
+    <Footer />
   </>
   );
 }
