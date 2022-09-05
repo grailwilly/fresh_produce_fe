@@ -1,5 +1,6 @@
 import React from "react";
 import {Footer} from '../layouts/Footer';
+import QuoteModal from "../layouts/QuoteModal";
 
 const Wholesale = () => {
   return (
@@ -9,8 +10,7 @@ const Wholesale = () => {
         <div className="flex flex-col ml-20">
             <h1 className="mt-20 text-5xl text-white font-bold drop-shadow-lg w-96 xs:w-100">Find Premium Quality Fresh Produce</h1>
             <p className="mt-5 text-lg text-white opacity-70 w-96 text-justify">At farmer's valley market, finding the varying fresh supplies is made easy. We offer a wide-ranging product line considering everything that falls under the your business needs.</p>
-            <a className="mt-8 w-48 px-12 py-3 bg-teal hover:bg-white hover:text-teal text-xl text-white font-semibold drop-shadow-lg rounded-full"
-                href="#">Get Quote</a>
+            <QuoteModal />
         </div>
       </header>
       <div>
@@ -19,7 +19,7 @@ const Wholesale = () => {
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
               <div className="p-4 md:w-1/4 flex flex-col text-center items-center">
                 <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-teal mb-5 flex-shrink-0">
-                  <svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10" viewBox="0 0 24 24">
+                  <svg fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" className="w-10 h-10" viewBox="0 0 24 24">
                     <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
                   </svg>
                 </div>
