@@ -40,7 +40,7 @@ const Nav = ({ user, signOut }) => {
           </li>
           <li>
             <a
-              href="/"
+              href="/farmers"
               aria-label="Our product"
               title="Our product"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
