@@ -8,6 +8,7 @@ import Nav from "./components/layouts/Nav";
 import Farmers from "./components/pages/Farmers";
 import Wholesale from "./components/pages/Wholesale";
 import SellerDashboard from "./components/pages/SellerDashboard";
+import BuyerDashboard from "./components/pages/BuyerDashboard";
 import { connect } from "react-redux";
 import { useEffect,useState } from "react";
 import { reloadUser } from "./components/actions/user";
@@ -56,6 +57,7 @@ function App({ user, reloadUser, loadCartItems }) {
         <Route path='/farmers' element={<Farmers />} />
         <Route path='/wholesale' element={<Wholesale />} />
         <Route path='/seller-dashboard' element={<SellerDashboard />} />
+        <Route path='/buyer-dashboard' element={<BuyerDashboard />} />
       </Routes>
     </>
   );
