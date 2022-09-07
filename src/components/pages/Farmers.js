@@ -11,8 +11,8 @@ const Farmers = () => {
         </div>
       </header>
       <section className="container px-5 py-2 mx-auto lg:pt-12 lg:px-32">
-        <div class="flex flex-wrap -m-1 md:-m-2">
-          <div class="flex flex-wrap w-1/3">
+        <div className="flex flex-wrap -m-1 md:-m-2">
+          <div className="flex flex-wrap w-1/3">
             <div className="group relative w-96">
               <img className="w-full object-cover"
                   src="https://images.unsplash.com/photo-1589923188900-85dae523342b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />

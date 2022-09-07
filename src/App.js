@@ -9,28 +9,25 @@ import Farmers from "./components/pages/Farmers";
 import Wholesale from "./components/pages/Wholesale";
 import SellerDashboard from "./components/pages/SellerDashboard";
 import BuyerDashboard from "./components/pages/BuyerDashboard";
+import CreateProduct from "./components/pages/CreateProduct";
 import { connect } from "react-redux";
 import { useEffect,useState } from "react";
 import { reloadUser } from "./components/actions/user";
 import { loadCartItems } from "./components/actions/cart";
 import LoadBar from "./components/layouts/LoadBar";
 
+const Dashboard = ({userRole}) => {
+  if (userRole == "farmer") {
+    return  <SellerDashboard />;
+  }
+  return <BuyerDashboard />;
+};
 
 
 function App({ user, reloadUser, loadCartItems }) {
 
 
   const location = useLocation()
-
-  const Dashboard = () => {
-    if (user.role == "farmer") {
-      return  <SellerDashboard />;
-    }
-  
-    return <BuyerDashboard />;
-  };
-
-  
 
   useEffect(() => {
 
@@ -67,6 +64,7 @@ function App({ user, reloadUser, loadCartItems }) {
         <Route path='/farmers' element={<Farmers />} />
         <Route path='/wholesale' element={<Wholesale />} />
         <Route path='/dashboard' element={<Dashboard role={user?.action?.user?.data?.role}/>} />
+        <Route path='/new-product' element={<CreateProduct />} />
       </Routes>
     </>
   );
