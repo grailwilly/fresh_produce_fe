@@ -39,24 +39,24 @@ const Nav = ({ user, signOut }) => {
             </Link>
           </li>
           <li>
-            <a
-              href="/farmers"
+            <Link
+              to="/farmers"
               aria-label="Our product"
               title="Our product"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Farmers
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/wholesale"
+            <Link
+              to="/wholesale"
               aria-label="Product pricing"
               title="Product pricing"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Wholesale
-            </a>
+            </Link>
           </li>
         </ul>
         <Link
@@ -207,24 +207,24 @@ const Nav = ({ user, signOut }) => {
                       </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/farmers"
                         aria-label="Our product"
                         title="Our product"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Farmers
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/wholesale"
                         aria-label="Product pricing"
                         title="Product pricing"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Wholesale
-                      </a>
+                      </Link>
                     </li>
 
                     {user.action && <CartIcon></CartIcon>}
