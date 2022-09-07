@@ -18,7 +18,7 @@ const Nav = ({ user, signOut }) => {
           {user.action &&
             <li>
               <Link
-                to="/seller-dashboard"
+                to="/dashboard"
                 aria-label="Dashboard"
                 title="Dashboard"
                 className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
@@ -187,7 +187,7 @@ const Nav = ({ user, signOut }) => {
                   <ul className="space-y-4">
                     {user.action && <li>
                       <Link
-                        to="/seller-dashboard"
+                        to="/dashboard"
                         aria-label="Dashboard"
                         title="Dashboard"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
