@@ -15,10 +15,20 @@ import { reloadUser } from "./components/actions/user";
 import { loadCartItems } from "./components/actions/cart";
 import LoadBar from "./components/layouts/LoadBar";
 
+
+
 function App({ user, reloadUser, loadCartItems }) {
 
 
   const location = useLocation()
+
+  const Dashboard = () => {
+    if (user.role == "farmer") {
+      return  <SellerDashboard />;
+    }
+  
+    return <BuyerDashboard />;
+  };
 
   
 
@@ -56,8 +66,7 @@ function App({ user, reloadUser, loadCartItems }) {
         <Route path='/cart' element={<Cart />} />
         <Route path='/farmers' element={<Farmers />} />
         <Route path='/wholesale' element={<Wholesale />} />
-        <Route path='/seller-dashboard' element={<SellerDashboard />} />
-        <Route path='/buyer-dashboard' element={<BuyerDashboard />} />
+        <Route path='/dashboard' element={<Dashboard role={user?.action?.user?.data?.role}/>} />
       </Routes>
     </>
   );
