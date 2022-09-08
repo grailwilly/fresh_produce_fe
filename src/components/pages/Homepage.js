@@ -1,16 +1,19 @@
 
+import Carousel from "../layouts/Carousel";
 import { Footer } from "../layouts/Footer";
+
 const Homepage = () => {
 
   return (
     <>
-      <div className="pt-32 lg:flex items-center relative z-10 container mx-auto">
+    
+      <div className="pt-30 lg:flex items-center relative container mx-auto">
         <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
-          <img tabIndex="0" role="img" aria-label="people smiling" className="mx-auto" src="https://cdn.tuk.dev/assets/templates/weCare/hero2-left.png"  alt="people smiling"/>
+          <Carousel />
         </div>
         <div  role="contentinfo"  className="w-full lg:w-1/2 h-full">
-          <p tabIndex="0" className="uppercase text-2xl mb-4">From Farms To Our Customers</p>
-          <h1 tabIndex="0" className="text-teal text-4xl lg:text-6xl font-black mb-8">We Work Directly With Growers</h1>
+          <p tabIndex="0" className="uppercase text-2xl mb-4">From Farms To Our Customers AND Businesses</p>
+          <h1 tabIndex="0" className="text-left text-teal text-4xl lg:text-6xl font-black mb-8">We Work Directly With Farmers | Ranchers Fisherfolks | Innovators</h1>
           <p tabIndex="0" className="text-gray-800 font-regular mb-8">COMBINING TECH WITH AGRICULTURE. We pride ourselves on the relationships we’ve built with local, Filipino farmers. Each and every day, we have the pleasure of working closely with hundreds of market leading growers and producers to bring the best quality produce straight from harvest to you. </p>
           <div className="bg-white lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg">
             <div className="sm:flex items-center py-2">
@@ -48,11 +51,13 @@ const Homepage = () => {
             </div>
             </div>
             <div className="flex justify-center w-full lg:border-r border-gray-300 py-6">
-              <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" viewBox="0 0 72 57" fill="none">
-                <path d="M54.9999 54.9998C59.1815 54.9998 62.5713 51.6099 62.5713 47.4283C62.5713 43.2468 59.1815 39.8569 54.9999 39.8569C50.8183 39.8569 47.4285 43.2468 47.4285 47.4283C47.4285 51.6099 50.8183 54.9998 54.9999 54.9998Z" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M39.8571 47.4285H9.57142H2V5.78571C2 4.78168 2.39885 3.81877 3.10881 3.10881C3.81877 2.39885 4.78168 2 5.78571 2H39.8571V24.7142M39.8571 47.4285V24.7142M39.8571 47.4285H62.5713H70.1427V24.7142M24.7142 47.4285H47.4285M70.1427 24.7142H39.8571M70.1427 24.7142L58.7856 5.78571H39.8571" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M20.9285 13.3569V28.4998M13.3571 20.9283H28.5H13.3571Z" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M17.1427 54.9998C21.3243 54.9998 24.7142 51.6099 24.7142 47.4283C24.7142 43.2468 21.3243 39.8569 17.1427 39.8569C12.9612 39.8569 9.57133 43.2468 9.57133 47.4283C9.57133 51.6099 12.9612 54.9998 17.1427 54.9998Z" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-package" width="100" height="80" viewBox="0 0 24 24" fill="none" stroke="teal">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+                <line x1="12" y1="12" x2="20" y2="7.5" />
+                <line x1="12" y1="12" x2="12" y2="21" />
+                <line x1="12" y1="12" x2="4" y2="7.5" />
+                <line x1="16" y1="5.25" x2="8" y2="9.75" />
               </svg>
               <div className="text-gray-800 w-1/2 pl-12">
                 <h1 className="font-bold text-2xl lg:text-5xl tracking-1px">10+</h1>
@@ -104,7 +109,10 @@ const Homepage = () => {
                 <div className="flex items-center">
                   <div className="w-16 h-16 relative">
                     <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                      {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg1.svg" alt="clock" /> */}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-growth" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M16.5 15a4.5 4.5 0 0 0 -4.5 4.5m4.5 -8.5a4.5 4.5 0 0 0 -4.5 4.5m4.5 -8.5a4.5 4.5 0 0 0 -4.5 4.5m-4 3.5c2.21 0 4 2.015 4 4.5m-4 -8.5c2.21 0 4 2.015 4 4.5m-4 -8.5c2.21 0 4 2.015 4 4.5m0 -7.5v6" />
+                    </svg>
                     </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
@@ -115,18 +123,30 @@ const Homepage = () => {
                 <div className="flex items-center">
                   <div className="w-16 h-16 relative">
                     <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                      {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg2.svg" alt="Friendly" /> */}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-truck" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <circle cx="7" cy="17" r="2" />
+                      <circle cx="17" cy="17" r="2" />
+                      <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                    </svg>
                     </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
                     <h2 className="text-lg font-semibold leading-4 text-gray-800">OUR ROLE</h2>
-                    <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">Our focus is to deliver produce from farms to customers.</p>
+                    <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">Our focus is to deliver produce from farms to customers without intermediaries by taking control of the Supply Chain.</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                 <div className="w-16 h-16 relative">
                   <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                    {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg3.svg" alt="Creative" /> */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-building-store" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="3" y1="21" x2="21" y2="21" />
+                    <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" />
+                    <line x1="5" y1="21" x2="5" y2="10.85" />
+                    <line x1="19" y1="21" x2="19" y2="10.85" />
+                    <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+                  </svg>
                   </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
@@ -137,7 +157,12 @@ const Homepage = () => {
                 <div className="flex items-center">
                   <div className="w-16 h-16 relative">
                     <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                      {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg4.svg" alt="Achievments" /> */}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-apple" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <circle cx="12" cy="14" r="7" />
+                      <path d="M12 11v-6a2 2 0 0 1 2 -2h2v1a2 2 0 0 1 -2 2h-2" />
+                      <path d="M10 10.5c1.333 .667 2.667 .667 4 0" />
+                    </svg>
                     </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
@@ -148,7 +173,7 @@ const Homepage = () => {
               </div>
             </div>
             <div className="hidden lg:block lg:w-3/5 xl:w-3/5 w-full lg:mt-0 mt-6">
-              <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="veggetable" className="w-full obejct-fit object-center object-fill h-full" />
+              <img src={require("../../assets/header_image.jpeg")} alt="veggetable" className="w-full obejct-fit object-center object-fill h-full" />
             </div>
           </div>
         </div>

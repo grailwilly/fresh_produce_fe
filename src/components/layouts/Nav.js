@@ -1,9 +1,10 @@
-import { useState } from 'react';
 import { Link,useNavigate } from 'react-router-dom';
+import { Fragment, useState } from 'react';
 import CartIcon from './cart/CartIcon';
 import { signOut } from '../actions/user';
 import { connect } from 'react-redux';
-
+import { Menu, Transition } from '@headlessui/react'
+import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 
 const Nav = ({ user, signOut }) => {
@@ -75,30 +76,105 @@ const Nav = ({ user, signOut }) => {
           title="Company"
           className="inline-flex items-center lg:mx-auto"
         >
-          <svg
-            className="w-8 text-deep-purple-accent-400"
-            viewBox="0 0 24 24"
-            strokeLinejoin="round"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeMiterlimit="10"
-            stroke="currentColor"
-            fill="none"
-          >
-            <rect x="3" y="1" width="7" height="12" />
-            <rect x="3" y="17" width="7" height="6" />
-            <rect x="14" y="1" width="7" height="6" />
-            <rect x="14" y="11" width="7" height="12" />
-          </svg>
-          <span className="ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase">
-            Farmer's Valley Market
-          </span>
+          
+          <img src={require('../../assets/logo_nav.png')} />
         </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
+          {user.action && <CartIcon></CartIcon>}
+          {user.action && 
+            <li>
+              <Menu as="div" className="relative inline-block text-left">
+              <div>
+                <Menu.Button className="inline-flex w-full justify-center">
+                  <img class="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" alt="avatar" />
+                  <ChevronDownIcon className="-mr-1 ml-2 mt-2 h-5 w-5" aria-hidden="true" />
+                </Menu.Button>
+              </div>
 
-          {user.user && <CartIcon></CartIcon>}
-          {user.user && <button onClick={signOutHandler}>Logout</button>}
-          {!user.user &&
+              <Transition
+                as={Fragment}
+                enter="transition ease-out duration-100"
+                enterFrom="transform opacity-0 scale-95"
+                enterTo="transform opacity-100 scale-100"
+                leave="transition ease-in duration-75"
+                leaveFrom="transform opacity-100 scale-100"
+                leaveTo="transform opacity-0 scale-95"
+              >
+                  <Menu.Items className="absolute right-0 z-10 mt-2 w-56 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                    <div className="py-1">
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={
+                              (active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                              'block px-4 py-2 text-sm')
+                            }
+                          >
+                            User Name/Email
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <hr />
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={
+                              (active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                              'block px-4 py-2 text-sm')
+                            }
+                          >
+                            Account settings
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={
+                              (active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                              'block px-4 py-2 text-sm')
+                            }
+                          >
+                            Profile
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item>
+                        {({ active }) => (
+                          <a
+                            href="#"
+                            className={
+                              (active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                              'block px-4 py-2 text-sm')
+                            }
+                          >
+                            Dashboard
+                          </a>
+                        )}
+                      </Menu.Item>
+                      <Menu.Item onClick={signOut}>
+                        {({ active }) => (
+                          <button
+                            type="submit"
+                            className={
+                              (active ? 'bg-gray-100 text-gray-900' : 'text-gray-700',
+                              'block w-full px-4 py-2 text-left text-sm')
+                            }
+                          >
+                            Sign out
+                          </button>
+                        )}
+                      </Menu.Item>
+                    </div>
+                  </Menu.Items>
+                </Transition>
+              </Menu>
+            </li>
+          }
+          {!user.action &&
             <li>
               <Link
                 to="/sign-in"

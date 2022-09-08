@@ -1,15 +1,17 @@
 import React from "react";
 import {Footer} from '../layouts/Footer';
 import QuoteModal from "../layouts/QuoteModal";
+import wholesaleBanner from "../../assets/wholesale_banner.png";
 
 const Wholesale = () => {
   return (
     <>
       <header
-        className="w-full h-[70vh] bg-[url('https://images.unsplash.com/photo-1626984232613-f20f15589bee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center">
+        className="w-full h-[70vh]" style={{ backgroundImage: `url(${wholesaleBanner})`, backgroundPosition: 'center',
+        backgroundSize: 'cover'}}>
         <div className="flex flex-col ml-20">
             <h1 className="mt-20 text-5xl text-white font-bold drop-shadow-lg w-96 xs:w-100">Find Premium Quality Fresh Produce</h1>
-            <p className="mt-5 text-lg text-white opacity-70 w-96 text-justify">At farmer's valley market, finding the varying fresh supplies is made easy. We offer a wide-ranging product line considering everything that falls under the your business needs.</p>
+            <p className="mt-5 text-lg text-white opacity-100 w-96 text-justify">At farmer's valley market, finding the varying fresh supplies is made easy. We offer a wide-ranging product line considering everything that falls under the your business needs.</p>
             <QuoteModal />
         </div>
       </header>
@@ -19,8 +21,11 @@ const Wholesale = () => {
             <div className="flex flex-wrap sm:-m-4 -mx-4 -mb-10 -mt-4 md:space-y-0 space-y-6">
               <div className="p-4 md:w-1/4 flex flex-col text-center items-center">
                 <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-teal mb-5 flex-shrink-0">
-                  <svg fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10" viewBox="0 0 24 24">
-                    <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-12 h-12" viewBox="0 0 24 24">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M10 16.5l2 -3l2 3m-2 -3v-2l3 -1m-6 0l3 1" />
+                    <circle cx="12" cy="7.5" r=".5" fill="currentColor" />
                   </svg>
                 </div>
                 <div className="flex-grow">
@@ -29,10 +34,10 @@ const Wholesale = () => {
               </div>
               <div className="p-4 md:w-1/4 flex flex-col text-center items-center">
                 <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-teal mb-5 flex-shrink-0">
-                  <svg fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10" viewBox="0 0 24 24">
-                    <circle cx="6" cy="6" r="3"></circle>
-                    <circle cx="6" cy="18" r="3"></circle>
-                    <path d="M20 4L8.12 15.88M14.47 14.48L20 20M8.12 8.12L12 12"></path>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-12 h-12" viewBox="0 0 24 24">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M9 12l2 2l4 -4" />
+                    <path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" />
                   </svg>
                 </div>
                 <div className="flex-grow">
@@ -41,9 +46,10 @@ const Wholesale = () => {
               </div>
               <div className="p-4 md:w-1/4 flex flex-col text-center items-center">
                 <div className="w-20 h-20 inline-flex items-center justify-center rounded-full bg-teal mb-5 flex-shrink-0">
-                  <svg fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-10 h-10" viewBox="0 0 24 24">
-                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
-                    <circle cx="12" cy="7" r="4"></circle>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="white" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" className="w-12 h-12" viewBox="0 0 24 24">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <path d="M17 8v-3a1 1 0 0 0 -1 -1h-10a2 2 0 0 0 0 4h12a1 1 0 0 1 1 1v3m0 4v3a1 1 0 0 1 -1 1h-12a2 2 0 0 1 -2 -2v-12" />
+                    <path d="M20 12v4h-4a2 2 0 0 1 0 -4h4" />
                   </svg>
                 </div>
                 <div className="flex-grow">
