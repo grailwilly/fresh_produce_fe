@@ -28,7 +28,7 @@ const BuyABox = ({ addCart, productItems, productBox, cardData, increaseQty, dec
 
   const addCartHandler = (e) => {
 
-    addCart(cardData.find(d => d.id == e),user)
+    addCart(cardData.find(d => d.id == e),user.headers)
 
   }
 

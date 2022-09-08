@@ -9,6 +9,7 @@ const cartReducer = createReducer({}, (builder) => {
     builder
         .addCase(ADD_CART, (state, payload) => {
             const found = state.find(e => e.id === payload.action.id)
+            console.log(found)
             if (found) {
                 found.qty += payload.action.qty
             } else {

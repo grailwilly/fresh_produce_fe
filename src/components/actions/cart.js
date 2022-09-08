@@ -4,15 +4,10 @@ import { baseURL } from "../constants/constants";
 
 
 
-export const addCart = (item, user) => async dispatch => {
+export const addCart = (item, headers) => async dispatch => {
 
-    let headers = user.action.headers
 
-    if (!headers) {
-        headers = user.headers
-    }
-
-    try {
+     try {
 
         const cartData = {
             qty: item.qty,
@@ -30,12 +25,11 @@ export const addCart = (item, user) => async dispatch => {
 
         })
 
+
         const formattedProducts = {
             ...item,
             id:resData.data
         }
-
-        console.log(formattedProducts)
 
         dispatch({
             type: ADD_CART,

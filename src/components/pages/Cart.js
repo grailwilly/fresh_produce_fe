@@ -29,7 +29,7 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
 
     useEffect(() => {
 
-        if(!user.action) {
+        if(!user.user) {
             navigate('/sign-in')
         } else {
             navigate('/cart')
