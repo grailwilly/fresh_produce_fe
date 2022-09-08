@@ -7,7 +7,7 @@ const Homepage = () => {
   return (
     <>
     
-      <div className="pt-30 lg:flex items-center relative z-10 container mx-auto">
+      <div className="pt-30 lg:flex items-center relative container mx-auto">
         <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
           <Carousel />
         </div>
