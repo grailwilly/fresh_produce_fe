@@ -4,15 +4,10 @@ import { baseURL } from "../constants/constants";
 
 
 
-export const addCart = (item, user) => async dispatch => {
+export const addCart = (item, headers) => async dispatch => {
 
-    let headers = user.action.headers
 
-    if (!headers) {
-        headers = user.headers
-    }
-
-    try {
+     try {
 
         const cartData = {
             qty: item.qty,
@@ -30,12 +25,14 @@ export const addCart = (item, user) => async dispatch => {
 
         })
 
+
         const formattedProducts = {
             ...item,
-            id:resData.data
+            id:resData.data,
+            seller_id:item.user_id,
+            product_id:item.id
         }
 
-        console.log(formattedProducts)
 
         dispatch({
             type: ADD_CART,
@@ -71,15 +68,7 @@ export const updateCartQty = (value, id) => dispatch => {
 }
 
 
-export const removeCartItem = (id, user) => async dispatch => {
-
-    let headers = user.action.headers
-
-    if (!headers) {
-        headers = user.headers
-    }
-
-    console.log(id)
+export const removeCartItem = (id, headers) => async dispatch => {
 
 
     try {
@@ -106,8 +95,6 @@ export const removeCartItem = (id, user) => async dispatch => {
 
 export const loadCartItems = (user) => async dispatch => {
 
-    console.log('loaded')
-
     const headers = user
     const productsUrl = `${baseURL}v1/products`
     const cartUrl = `${baseURL}v1/cart`
@@ -128,12 +115,12 @@ export const loadCartItems = (user) => async dispatch => {
             const found = productsReq.data.find(el => el.id === e.product_id)
             return {
                 ...found,
-                ...e
+                ...e,
+                seller_id:found.user_id
             }
 
         })
 
-  
         dispatch({
             type: LOAD_CART_INIT,
             action: formattedProducts

@@ -1,7 +1,42 @@
-import React from "react";
+import {useEffect, useState} from "react";
 import Sidebar from "../layouts/Sidebar";
+import { getMySold } from "../actions/sold";
+import { connect } from "react-redux";
+import { priceFormat } from "../helpers/helpers";
 
-const SellerDashboard = () => {
+const SellerDashboard = ({getMySold,user,sold}) => {
+
+  const [totalSales,setTotalSales] = useState(0)
+  const [waitingPayment,setWaitingPayment] = useState(0)
+  const [paidOrders,setPaidOrders] = useState(0)
+  const [inDelivery,setIndelivery] = useState(0)
+
+  useEffect(() => {
+    getMySold(user.headers)
+  },[user])
+
+  useEffect(() => {
+    let total = sold.map(e => e.price)
+    total = total.reduce((a,b) => a+b,0)
+    setTotalSales(total)
+  }, [sold])
+
+
+  useEffect(() => {
+    const pending = sold.filter(e => e.status === null)
+    setWaitingPayment(pending.length)
+  },[sold])
+
+  useEffect(() => {
+    const paid = sold.filter(e => e.status === 'paid')
+    setPaidOrders(paid.length)
+  },[sold])
+
+  useEffect(() => {
+    const delivery = sold.filter(e => e.status === 'delivery')
+    setIndelivery(delivery.length)
+  },[sold])
+
     return (
       <div className="flex">
         <aside className="h-screen sticky top-0">
@@ -20,7 +55,7 @@ const SellerDashboard = () => {
                     <div className="grid grid-cols-2 py-5">
                       <div>
                         <p>Total Sales</p>
-                        <p>789</p>
+                        <p>{priceFormat(totalSales)}</p>
                       </div>
                       <div>
                         <img src="https://img.icons8.com/ios/20/000000/squiggly-line.png"/>
@@ -67,21 +102,21 @@ const SellerDashboard = () => {
               <div className="grid grid-cols-1 gap-6 mb-6 md:grid-cols-3">
                 <div className="bg-white rounded-3xl shadow p-6 w-64">
                   <div className="text-sm font-medium text-gray-500 truncate">
-                    New order
+                    Pending Payment
                   </div>
                   <div className="grid grid-cols-2">
                     <img src="https://img.icons8.com/external-flat-icons-inmotus-design/50/000000/external-Order-round-mobile-ui-set-flat-icons-inmotus-design.png"/>
-                    <p className="mt-1 text-3xl font-semibold text-gray-900">200</p>
+                    <p className="mt-1 text-3xl font-semibold text-gray-900">{waitingPayment}</p>
                   </div>
                   <p>Potential +Php 1,000,000</p>
                 </div>
                 <div className="bg-white rounded-3xl shadow p-6 w-64">
                   <div className="text-sm font-medium text-gray-500 truncate">
-                    Ready to ship
+                    Paid Orders
                   </div>
                   <div className="grid grid-cols-2">
                     <img src="https://img.icons8.com/color/50/000000/buy--v1.png"/>
-                    <p className="mt-1 text-3xl font-semibold text-gray-900">300</p>
+                    <p className="mt-1 text-3xl font-semibold text-gray-900">{paidOrders}</p>
                   </div>
                   <p>Potential +Php 100,000</p>
                 </div>
@@ -91,7 +126,7 @@ const SellerDashboard = () => {
                   </div>
                   <div className="grid grid-cols-2">
                     <img src="https://img.icons8.com/color/48/000000/shipped.png"/>
-                    <p className="mt-1 text-3xl font-semibold text-gray-900">300</p>
+                    <p className="mt-1 text-3xl font-semibold text-gray-900">{inDelivery}</p>
                   </div>
                   <p>Potential +Php 500,000</p>
                 </div>
@@ -206,4 +241,9 @@ const SellerDashboard = () => {
     );
 }
 
-export default SellerDashboard;
+const MapToStateProps = state => ({
+  user: state.user,
+  sold: state.sold
+})
+
+export default connect(MapToStateProps,{getMySold})(SellerDashboard);

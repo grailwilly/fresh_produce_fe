@@ -8,20 +8,27 @@ const user = createReducer({}, builder => {
         .addCase(REGISTER_USER ,(state, payload) => {
 
             const {headers,status,action} = payload;
-            state = {headers,status,action}
+            const {data} = action
+            const user = data;
+            state = {headers,status,user}
             return state;
            
         })
         .addCase(LOGIN_USER,(state, payload) => {
 
             const {headers,status,action} = payload;
-            state = {headers,status,action}
+            const {data} = action
+            const user = data;
+            state = {headers,status,user}
             return state;
            
         })
         .addCase(RELOAD_USER,(state, payload) => {
             const {headers,status,action} = payload;
-            state = {headers,status,action}
+
+            const {data} = action
+            const user = data;
+            state = {headers,status,user}
             return state;
         })
         .addCase(SIGN_OUT,(state, payload) => {

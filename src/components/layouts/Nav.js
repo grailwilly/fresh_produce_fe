@@ -1,13 +1,23 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import CartIcon from './cart/CartIcon';
 import { signOut } from '../actions/user';
 import { connect } from 'react-redux';
 
 
+
 const Nav = ({ user, signOut }) => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navigate = useNavigate()
+
+  const signOutHandler = () => {
+
+    signOut()
+    navigate('/sign-in')
+
+  }
 
   return (
 
@@ -15,7 +25,7 @@ const Nav = ({ user, signOut }) => {
       <div className="relative flex grid items-center grid-cols-2 lg:grid-cols-3">
         <ul className="flex items-center hidden space-x-8 lg:flex">
 
-          {user.action &&
+          {user.user &&
             <li>
               <Link
                 to="/dashboard"
@@ -39,24 +49,24 @@ const Nav = ({ user, signOut }) => {
             </Link>
           </li>
           <li>
-            <a
-              href="/farmers"
+            <Link
+              to="/farmers"
               aria-label="Our product"
               title="Our product"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Farmers
-            </a>
+            </Link>
           </li>
           <li>
-            <a
-              href="/wholesale"
+            <Link
+              to="/wholesale"
               aria-label="Product pricing"
               title="Product pricing"
               className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
             >
               Wholesale
-            </a>
+            </Link>
           </li>
         </ul>
         <Link
@@ -86,9 +96,9 @@ const Nav = ({ user, signOut }) => {
         </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
 
-          {user.action && <CartIcon></CartIcon>}
-          {user.action && <button onClick={signOut}>Logout</button>}
-          {!user.action &&
+          {user.user && <CartIcon></CartIcon>}
+          {user.user && <button onClick={signOutHandler}>Logout</button>}
+          {!user.user &&
             <li>
               <Link
                 to="/sign-in"
@@ -101,7 +111,7 @@ const Nav = ({ user, signOut }) => {
             </li>
           }
 
-          {!user.action &&
+          {!user.user &&
             <li>
               <Link
                 to="/register"
@@ -185,7 +195,7 @@ const Nav = ({ user, signOut }) => {
                 </div>
                 <nav>
                   <ul className="space-y-4">
-                    {user.action && <li>
+                    {user.user && <li>
                       <Link
                         to="/dashboard"
                         aria-label="Dashboard"
@@ -207,30 +217,30 @@ const Nav = ({ user, signOut }) => {
                       </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/farmers"
                         aria-label="Our product"
                         title="Our product"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Farmers
-                      </a>
+                      </Link>
                     </li>
                     <li>
-                      <a
-                        href="/"
+                      <Link
+                        to="/wholesale"
                         aria-label="Product pricing"
                         title="Product pricing"
                         className="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400"
                       >
                         Wholesale
-                      </a>
+                      </Link>
                     </li>
 
-                    {user.action && <CartIcon></CartIcon>}
-                    {user.action && <button onClick={signOut}>Logout</button>}
+                    {user.user && <CartIcon></CartIcon>}
+                    {user.user && <button onClick={signOutHandler}>Logout</button>}
 
-                    {!user.action && <li>
+                    {!user.user && <li>
                       <Link
                         to="/sign-in"
                         aria-label="Sign in"
@@ -241,7 +251,7 @@ const Nav = ({ user, signOut }) => {
                       </Link>
                     </li>
                     }
-                    {!user.action &&
+                    {!user.user &&
                       <li>
                         <Link
                           to="/register"

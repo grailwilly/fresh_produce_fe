@@ -9,9 +9,14 @@ const storeLocal = (obj,action) => {
 
     if(action === 'remove') {
         storage.removeItem('user')
+        storage.removeItem('headers')
+        storage.removeItem('status')
        
     } else {
-        storage.setItem('user', JSON.stringify(obj))
+        const {user,headers,status} = obj
+        storage.setItem('user', JSON.stringify(user))
+        storage.setItem('headers', JSON.stringify(headers))
+        storage.setItem('status', JSON.stringify(status))
     }
 }
 
@@ -26,6 +31,7 @@ export const register = (userInfo) => async dispatch => {
             method: 'post',
             data: userInfo,
         })
+
         dispatch({
             type: REGISTER_USER,
             action: res.data,
@@ -75,9 +81,12 @@ export const signIn = (loginInfo) => async dispatch => {
 
     } catch (err) {
         storeLocal({},'remove')
+        const data = {user:undefined}
         dispatch({
             type:LOGIN_USER,
             status: err.response.status,
+            headers: undefined,
+            action: data
          })
     }
 
@@ -85,10 +94,16 @@ export const signIn = (loginInfo) => async dispatch => {
 
 export const reloadUser = () => dispatch => {
 
-    const userInfo = JSON.parse(window.localStorage.getItem('user'))
+    const data = JSON.parse(window.localStorage.getItem('user'))
+    const headers = JSON.parse(window.localStorage.getItem('headers'))
+    const status = JSON.parse(window.localStorage.getItem('status'))
+
+
     dispatch({
         type: RELOAD_USER,
-         action: userInfo
+        action: data,
+        status: status,
+        headers: headers
     })
 
 }
