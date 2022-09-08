@@ -81,9 +81,12 @@ export const signIn = (loginInfo) => async dispatch => {
 
     } catch (err) {
         storeLocal({},'remove')
+        const data = {user:undefined}
         dispatch({
             type:LOGIN_USER,
             status: err.response.status,
+            headers: undefined,
+            action: data
          })
     }
 

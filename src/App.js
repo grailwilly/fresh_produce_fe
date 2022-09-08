@@ -15,6 +15,7 @@ import { useEffect, useState } from "react";
 import { reloadUser } from "./components/actions/user";
 import { loadCartItems } from "./components/actions/cart";
 import LoadBar from "./components/layouts/LoadBar";
+import NoMatch from "./components/pages/NoMatch";
 
 
 const Dashboard = ({ userRole }) => {
@@ -47,8 +48,6 @@ function App({ user, reloadUser, loadCartItems }) {
 
   }, [])
 
-
-
   useEffect(() => {
     if (user.headers) {
       loadCartItems(user.headers)
@@ -60,12 +59,13 @@ function App({ user, reloadUser, loadCartItems }) {
 
   }, [user])
 
+  console.log(role)
 
   return (
     <>
 
       <LoadBar></LoadBar>
-      {location.pathname !== '/seller-dashboard' && <Nav user={user} />}
+      {role !== 'farmer' && <Nav user={user} />}
       <Routes>
         <Route path='/' element={<Homepage></Homepage>} />
         <Route path='/register' element={<Register></Register>} />
@@ -74,9 +74,12 @@ function App({ user, reloadUser, loadCartItems }) {
         <Route path='/cart' element={<Cart />} />
         <Route path='/farmers' element={<Farmers />} />
         <Route path='/wholesale' element={<Wholesale />} />
-        <Route path='/dashboard' element={<Dashboard userRole={role} />} />
-        <Route path='/new-product' element={<CreateProduct />} />
 
+        <Route path='dashboard' element={<Dashboard userRole={role} />} />
+        <Route path='new-product' element={<CreateProduct />} />
+
+
+        <Route path="*" element={<NoMatch />} />
       </Routes>
     </>
   );

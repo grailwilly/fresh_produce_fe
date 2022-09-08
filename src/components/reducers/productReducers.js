@@ -1,5 +1,5 @@
 import { createReducer} from "@reduxjs/toolkit";
-import { LOAD_PRODUCTS } from "../constants/constants";
+import { LOAD_PRODUCTS,CREATE_PRODUCT} from "../constants/constants";
 
 
 const reducer = createReducer({}, (builder) => {
@@ -7,6 +7,11 @@ const reducer = createReducer({}, (builder) => {
       .addCase(LOAD_PRODUCTS, (state, payload) => {
         state = payload.action
 
+        return state
+      })
+
+      .addCase(CREATE_PRODUCT, (state, payload) => {
+        state = payload.action
         return state
       })
   })
