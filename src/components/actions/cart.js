@@ -106,8 +106,6 @@ export const removeCartItem = (id, user) => async dispatch => {
 
 export const loadCartItems = (user) => async dispatch => {
 
-    console.log('loaded')
-
     const headers = user
     const productsUrl = `${baseURL}v1/products`
     const cartUrl = `${baseURL}v1/cart`

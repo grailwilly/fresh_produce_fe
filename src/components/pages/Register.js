@@ -11,20 +11,21 @@ const navigate = useNavigate()
 
 
   useEffect(() => {
+    if(user.user) {
+    
+        navigate('/dashboard')
 
-    if(user.action) {
-        navigate('/products')
     }
 
 },[user])
 
   const [userInfo,setUserInfo] = useState({
     role: '',
-    fName : '',
-    lName: '',
+    first_name : '',
+    last_name: '',
     email :'',
     password :'',
-    passwordConfirmation :''
+    password_confirmation :''
 
   })
 
@@ -39,8 +40,10 @@ const navigate = useNavigate()
   }
 
 
+
+
   const registerHandler = (e) => {
-    
+
     register(userInfo)
   }
 
@@ -60,9 +63,9 @@ const navigate = useNavigate()
                 </Link>
               </p>
               <div className="mt-6 w-full">
-                <label for="role" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">I am a</label>
+                <label htmlFor="role" className="block mb-2 text-sm font-medium text-gray-900 dark:text-gray-400">I am a</label>
                 <select onChange={onChangeHandler} id="role" name="role" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2">
-                  <option selected>Choose a role</option>
+                  <option defaultValue={''}>Choose a role</option>
                   <option value="buyer">Buyer</option>
                   <option value="farmer">Farmer</option>
                 </select>
@@ -70,16 +73,16 @@ const navigate = useNavigate()
               <div className="mt-6 w-full">
                 <label htmlFor="lName" className="text-sm font-medium leading-none text-gray-800">
                   {" "}
-                  Last Name{" "}
+                  First Name{" "}
                 </label>
-                <input  onChange={onChangeHandler} id="last_name" name='lName' aria-labelledby="lName" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="" />
+                <input  onChange={onChangeHandler} id="first_name" name='first_name' aria-labelledby="lName" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="" />
               </div>
               <div className="mt-6 w-full">
                 <label htmlFor="lName" className="text-sm font-medium leading-none text-gray-800">
                   {" "}
                   Last Name{" "}
                 </label>
-                <input  onChange={onChangeHandler} id="last_name" name='lName' aria-labelledby="lName" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="" />
+                <input  onChange={onChangeHandler} id="last_name" name='last_name' aria-labelledby="lName" type="text" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="" />
               </div>
               <div className="mt-6 w-full">
                 <label htmlFor="email" className="text-sm font-medium leading-none text-gray-800">
