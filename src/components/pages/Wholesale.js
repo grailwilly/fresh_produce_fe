@@ -1,15 +1,17 @@
 import React from "react";
 import {Footer} from '../layouts/Footer';
 import QuoteModal from "../layouts/QuoteModal";
+import wholesaleBanner from "../../assets/wholesale_banner.png";
 
 const Wholesale = () => {
   return (
     <>
       <header
-        className="w-full h-[70vh] bg-[url('https://images.unsplash.com/photo-1626984232613-f20f15589bee?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80')] bg-cover bg-center">
+        className="w-full h-[70vh]" style={{ backgroundImage: `url(${wholesaleBanner})`, backgroundPosition: 'center',
+        backgroundSize: 'cover'}}>
         <div className="flex flex-col ml-20">
             <h1 className="mt-20 text-5xl text-white font-bold drop-shadow-lg w-96 xs:w-100">Find Premium Quality Fresh Produce</h1>
-            <p className="mt-5 text-lg text-white opacity-70 w-96 text-justify">At farmer's valley market, finding the varying fresh supplies is made easy. We offer a wide-ranging product line considering everything that falls under the your business needs.</p>
+            <p className="mt-5 text-lg text-white opacity-100 w-96 text-justify">At farmer's valley market, finding the varying fresh supplies is made easy. We offer a wide-ranging product line considering everything that falls under the your business needs.</p>
             <QuoteModal />
         </div>
       </header>
