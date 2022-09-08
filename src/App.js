@@ -16,6 +16,7 @@ import { reloadUser } from "./components/actions/user";
 import { loadCartItems } from "./components/actions/cart";
 import LoadBar from "./components/layouts/LoadBar";
 import NoMatch from "./components/pages/NoMatch";
+import OrderSingle from "./components/pages/OrderSingle";
 
 
 const Dashboard = ({ userRole }) => {
@@ -73,6 +74,7 @@ function App({ user, reloadUser, loadCartItems }) {
         <Route path='dashboard' element={<Dashboard userRole={role} />} />
         <Route path='new-product' element={<CreateProduct />} />
 
+        <Route path='/order/:id' element={<OrderSingle />}></Route>
 
         <Route path="*" element={<NoMatch />} />
       </Routes>

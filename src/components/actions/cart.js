@@ -28,8 +28,11 @@ export const addCart = (item, headers) => async dispatch => {
 
         const formattedProducts = {
             ...item,
-            id:resData.data
+            id:resData.data,
+            seller_id:item.user_id,
+            product_id:item.id
         }
+
 
         dispatch({
             type: ADD_CART,

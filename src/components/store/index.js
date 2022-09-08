@@ -4,6 +4,7 @@ import productBoxReducer from '../reducers/productBoxReducer'
 import cartReducer from '../reducers/cartReducer'
 import userReducer from "../reducers/userReducer";
 import soldReducer from "../reducers/soldReducer";
+import ordersReducer from "../reducers/ordersReducer";
 
 
 const preloadedState = {
@@ -12,6 +13,7 @@ const preloadedState = {
     cart:[],
     user:{},
     sold:[],
+    orders:[],
 }
 
 
@@ -22,7 +24,8 @@ export const store = configureStore({
         productBox: productBoxReducer,
         cart: cartReducer,
         user: userReducer,
-        sold: soldReducer
+        sold: soldReducer,
+        orders: ordersReducer,
     },
 
 })

@@ -6,8 +6,11 @@ import { MY_SOLD } from "../constants/constants"
 export const getMySold = (headers) => async dispatch => {
 
     const url = `${baseURL}v1/sold`
+ 
 
     try {
+
+        
 
         const res = await axios({
             method:'get',
