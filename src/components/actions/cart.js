@@ -65,15 +65,7 @@ export const updateCartQty = (value, id) => dispatch => {
 }
 
 
-export const removeCartItem = (id, user) => async dispatch => {
-
-    let headers = user.action.headers
-
-    if (!headers) {
-        headers = user.headers
-    }
-
-    console.log(id)
+export const removeCartItem = (id, headers) => async dispatch => {
 
 
     try {
