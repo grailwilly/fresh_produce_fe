@@ -107,7 +107,10 @@ const Homepage = () => {
                 <div className="flex items-center">
                   <div className="w-16 h-16 relative">
                     <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                      {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg1.svg" alt="clock" /> */}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-growth" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <path d="M16.5 15a4.5 4.5 0 0 0 -4.5 4.5m4.5 -8.5a4.5 4.5 0 0 0 -4.5 4.5m4.5 -8.5a4.5 4.5 0 0 0 -4.5 4.5m-4 3.5c2.21 0 4 2.015 4 4.5m-4 -8.5c2.21 0 4 2.015 4 4.5m-4 -8.5c2.21 0 4 2.015 4 4.5m0 -7.5v6" />
+                    </svg>
                     </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
@@ -118,18 +121,30 @@ const Homepage = () => {
                 <div className="flex items-center">
                   <div className="w-16 h-16 relative">
                     <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                      {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg2.svg" alt="Friendly" /> */}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-truck" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <circle cx="7" cy="17" r="2" />
+                      <circle cx="17" cy="17" r="2" />
+                      <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m4 0h2v-6h-8m0 -5h5l3 5" />
+                    </svg>
                     </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
                     <h2 className="text-lg font-semibold leading-4 text-gray-800">OUR ROLE</h2>
-                    <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">Our focus is to deliver produce from farms to customers.</p>
+                    <p className="lg:w-40 2xl:w-52 text-base leading-6 mt-2 text-gray-600">Our focus is to deliver produce from farms to customers without intermediaries by taking control of the Supply Chain.</p>
                   </div>
                 </div>
                 <div className="flex items-center">
                 <div className="w-16 h-16 relative">
                   <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                    {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg3.svg" alt="Creative" /> */}
+                  <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-building-store" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <line x1="3" y1="21" x2="21" y2="21" />
+                    <path d="M3 7v1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1m0 1a3 3 0 0 0 6 0v-1h-18l2 -4h14l2 4" />
+                    <line x1="5" y1="21" x2="5" y2="10.85" />
+                    <line x1="19" y1="21" x2="19" y2="10.85" />
+                    <path d="M9 21v-4a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v4" />
+                  </svg>
                   </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
@@ -140,7 +155,12 @@ const Homepage = () => {
                 <div className="flex items-center">
                   <div className="w-16 h-16 relative">
                     <div className=" flex-shrink-0 z-20  w-16 h-16 flex items-center justify-center mt-2 mr-3">
-                      {/* <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/feature_6_Svg4.svg" alt="Achievments" /> */}
+                    <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-apple" width="44" height="44" viewBox="0 0 24 24" strokeWidth="1.5" stroke="teal" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                      <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                      <circle cx="12" cy="14" r="7" />
+                      <path d="M12 11v-6a2 2 0 0 1 2 -2h2v1a2 2 0 0 1 -2 2h-2" />
+                      <path d="M10 10.5c1.333 .667 2.667 .667 4 0" />
+                    </svg>
                     </div>
                   </div>
                   <div className="flex items-start flex-col ml-6 pt-8">
@@ -151,7 +171,7 @@ const Homepage = () => {
               </div>
             </div>
             <div className="hidden lg:block lg:w-3/5 xl:w-3/5 w-full lg:mt-0 mt-6">
-              <img src="https://images.unsplash.com/photo-1471193945509-9ad0617afabf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" alt="veggetable" className="w-full obejct-fit object-center object-fill h-full" />
+              <img src={require("../../assets/header_image.jpeg")} alt="veggetable" className="w-full obejct-fit object-center object-fill h-full" />
             </div>
           </div>
         </div>
