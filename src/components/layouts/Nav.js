@@ -80,8 +80,8 @@ const Nav = ({ user, signOut }) => {
           <img src={require('../../assets/logo_nav.png')} />
         </Link>
         <ul className="flex items-center hidden ml-auto space-x-8 lg:flex">
-          {user.action && <CartIcon></CartIcon>}
-          {user.action && 
+          {user.user && <CartIcon></CartIcon>}
+          {user.user && 
             <li>
               <Menu as="div" className="relative inline-block text-left">
               <div>
@@ -174,7 +174,7 @@ const Nav = ({ user, signOut }) => {
               </Menu>
             </li>
           }
-          {!user.action &&
+          {!user.user &&
             <li>
               <Link
                 to="/sign-in"
