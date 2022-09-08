@@ -112,12 +112,12 @@ export const loadCartItems = (user) => async dispatch => {
             const found = productsReq.data.find(el => el.id === e.product_id)
             return {
                 ...found,
-                ...e
+                ...e,
+                seller_id:found.user_id
             }
 
         })
 
-  
         dispatch({
             type: LOAD_CART_INIT,
             action: formattedProducts

@@ -2,9 +2,10 @@ import { priceFormat } from '../helpers/helpers'
 import { connect } from 'react-redux'
 import { useEffect,useState } from 'react'
 import {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem,loadCartItems} from '../actions/cart'
+import {completeOrder} from '../actions/order'
 import { useNavigate } from 'react-router-dom'
 
-const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem, user,loadCartItems}) => {
+const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem, user,completeOrder}) => {
 
     const [cartItems,setCartItems] = useState([])
 
@@ -16,14 +17,10 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
        
     },[items])
 
-    useEffect(() => {
-        loadCartItems()
-    },[])
-
+ 
     const qtyChangeHandler = (e,id) => {
         const {value} = e.target
         updateCartQty(value,id)
-       
     }
 
 
@@ -118,7 +115,7 @@ const Cart = ({ items, increaseCartQty,decreaseCartQty,updateCartQty,removeCartI
                                 <span>Total cost</span>
                                 <span>{cartItems.length > 0 && priceFormat(cartItems.map(e => e.price * e.qty).reduce((a, b) => a + b))}</span>
                             </div>
-                            <button className="bg-teal font-semibold hover:bg-dark-green py-3 text-sm text-white uppercase w-full">Complete Order</button>
+                            <button onClick={() => completeOrder(cartItems,user.headers)} className="bg-teal font-semibold hover:bg-dark-green py-3 text-sm text-white uppercase w-full">Complete Order</button>
                         </div>
                     </div>
 
@@ -136,4 +133,4 @@ const MapToStateProps = state => ({
 })
 
 
-export default connect(MapToStateProps, {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem,loadCartItems})(Cart)
+export default connect(MapToStateProps, {increaseCartQty,decreaseCartQty,updateCartQty,removeCartItem,loadCartItems,completeOrder})(Cart)

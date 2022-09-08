@@ -37,25 +37,20 @@ function App({ user, reloadUser, loadCartItems }) {
 
 
   useEffect(() => {
-
     if (JSON.parse(window.localStorage.getItem('headers'))) {
       reloadUser()
-      const storageData = JSON.parse(window.localStorage.getItem('headers'))
-      loadCartItems(storageData)
-    } else {
-      navigate('/sign-in')
     }
-
   }, [])
 
   useEffect(() => {
-    if (user.headers) {
-      loadCartItems(user.headers)
-    }
 
-    if (user.user) {
-      setRole(user.user.role)
+    if(!user.headers) {
+      return
     }
+ 
+      loadCartItems(user.headers)
+      setRole(user.user.role)
+    
 
   }, [user])
 
