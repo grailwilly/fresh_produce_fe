@@ -51,11 +51,13 @@ const Homepage = () => {
             </div>
             </div>
             <div className="flex justify-center w-full lg:border-r border-gray-300 py-6">
-              <svg xmlns="http://www.w3.org/2000/svg" width="72" height="57" viewBox="0 0 72 57" fill="none">
-                <path d="M54.9999 54.9998C59.1815 54.9998 62.5713 51.6099 62.5713 47.4283C62.5713 43.2468 59.1815 39.8569 54.9999 39.8569C50.8183 39.8569 47.4285 43.2468 47.4285 47.4283C47.4285 51.6099 50.8183 54.9998 54.9999 54.9998Z" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M39.8571 47.4285H9.57142H2V5.78571C2 4.78168 2.39885 3.81877 3.10881 3.10881C3.81877 2.39885 4.78168 2 5.78571 2H39.8571V24.7142M39.8571 47.4285V24.7142M39.8571 47.4285H62.5713H70.1427V24.7142M24.7142 47.4285H47.4285M70.1427 24.7142H39.8571M70.1427 24.7142L58.7856 5.78571H39.8571" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M20.9285 13.3569V28.4998M13.3571 20.9283H28.5H13.3571Z" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
-                <path d="M17.1427 54.9998C21.3243 54.9998 24.7142 51.6099 24.7142 47.4283C24.7142 43.2468 21.3243 39.8569 17.1427 39.8569C12.9612 39.8569 9.57133 43.2468 9.57133 47.4283C9.57133 51.6099 12.9612 54.9998 17.1427 54.9998Z" stroke="teal" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"></path>
+            <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-package" width="100" height="80" viewBox="0 0 24 24" fill="none" stroke="teal">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3" />
+                <line x1="12" y1="12" x2="20" y2="7.5" />
+                <line x1="12" y1="12" x2="12" y2="21" />
+                <line x1="12" y1="12" x2="4" y2="7.5" />
+                <line x1="16" y1="5.25" x2="8" y2="9.75" />
               </svg>
               <div className="text-gray-800 w-1/2 pl-12">
                 <h1 className="font-bold text-2xl lg:text-5xl tracking-1px">10+</h1>
