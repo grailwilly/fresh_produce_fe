@@ -1,6 +1,31 @@
-import { ADD_CART, UPDATE_CART_QTY, DECREASE_CART_QTY, INCREASE_CART_QTY, REMOVE_CART_ITEM, LOAD_CART_INIT } from "../constants/constants";
+import { ADD_CART, UPDATE_CART_QTY, DECREASE_CART_QTY, INCREASE_CART_QTY, REMOVE_CART_ITEM, LOAD_CART_INIT,PAY_NOW } from "../constants/constants";
 import axios from "axios";
 import { baseURL } from "../constants/constants";
+
+
+
+export const payNow = (data,headers) => async dispatch => {
+
+    const url = `${baseURL}v1/pay-now/`
+
+    try {
+
+        const res = await axios({
+            method:'post',
+            headers,
+            url,
+            data: {id:data.id}
+        })
+
+        dispatch({
+            type: PAY_NOW,
+            action: res.data
+        })
+        
+    } catch (err) {
+        console.error(err.message)
+    }
+}
 
 
 

@@ -155,7 +155,7 @@ const Nav = ({ user, signOut }) => {
                           </a>
                         )}
                       </Menu.Item>
-                      <Menu.Item onClick={signOut}>
+                      <Menu.Item onClick={signOutHandler}>
                         {({ active }) => (
                           <button
                             type="submit"

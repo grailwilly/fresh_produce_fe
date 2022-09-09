@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { myOrders,payNow } from '../actions/order';
 import { connect } from 'react-redux';
 import { priceFormat } from '../helpers/helpers';
+import RequestSpin from "../layouts/RequestSpin";
 
 const BuyerDashboard = ({ myOrders, user, orders,payNow }) => {
 
@@ -68,6 +69,12 @@ const BuyerDashboard = ({ myOrders, user, orders,payNow }) => {
                     </button> }
                   </div>
                 </div>
+
+                <div className="flex items-center">
+               {!e.isLoading  && <button className={`bg-teal text-white px-5 ${e.status === 'paid' ? 'hidden' : ''} py-2 rounded hover:bg-dark-green`} onClick={() => payNowHandler(e)}>Pay now</button> }
+                  {e.isLoading && <button className='bg-teal text-white px-5 py-2 rounded hover:bg-dark-green'>
+                 <RequestSpin></RequestSpin>
+                </button> }
               </div>
             </div>
       )

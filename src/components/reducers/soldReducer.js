@@ -1,6 +1,6 @@
 
 import { createReducer } from "@reduxjs/toolkit";
-import { MY_SOLD } from "../constants/constants";
+import { MY_SOLD,SIGN_OUT } from "../constants/constants";
 
 
 
@@ -11,6 +11,11 @@ const sold = createReducer({}, builder => {
 
             console.log(payload.action)
             state = payload.action
+            return state;
+        })
+
+        .addCase(SIGN_OUT,(state, payload) => {
+            state = []
             return state;
         })
        
