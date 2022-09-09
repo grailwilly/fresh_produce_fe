@@ -50,7 +50,9 @@ const BuyABox = ({ addCart, productItems, productBox, cardData, increaseQty, dec
                 productItems.map((e, i) => {
                   return (
                     <div key={i} className="flex flex-col items-center justify-center w-full max-w-lg mx-auto border border-teal p-5 rounded">
-                      <img className="object-cover w-full rounded-md " src={e.image} alt="box" />
+                      <div>
+                        <img className="object-cover w-96 h-48 rounded-md " src={e.image} alt="box" />
+                      </div>
                       <h4 className="mt-2 text-lg font-medium text-gray-700 dark:text-gray-200 text-cus-sm">{e.name}</h4>
                       <p className="my-2 text-teal text-xs">{`${priceFormat(e.price)} per box`}</p>
                       {user.user && <> 
