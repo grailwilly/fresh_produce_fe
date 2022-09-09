@@ -75,8 +75,12 @@
 * [Copyright](#copyright)
 
 ## Links
+The different hosted versions of the website can be found at the following locations, we used React for our frontend and API rails for our database, the staging area is a subdomain of the live website that we deploy to manually when we want to test-out new features and the production is currently being built:
 
-
+* 🐥 **Frontend React:** https://github.com/grailwilly/fresh_produce_fe
+* 🐥 **API Rails:** https://github.com/johndominicvillalino/fresh_produce
+* 🧪 **Staging:** https://fresh-produce-791ce.web.app/
+* 🌐 **Production:** Coming Soon
 
 ## Versions
 
