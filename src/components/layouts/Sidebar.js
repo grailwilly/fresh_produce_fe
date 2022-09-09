@@ -87,7 +87,7 @@ const Sidebar = ({ signOut }) => {
                                 className="w-6 h-6 text-gray-100"
                                 fill="none"
                                 viewBox="0 0 24 24"
-                                stroke="currentColor"
+                                stroke="#ffffff"
                                 strokeWidth={2}
                             >
                                 <path
@@ -96,7 +96,7 @@ const Sidebar = ({ signOut }) => {
                                     d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
                                 />
                             </svg>
-                            <span className="text-gray-100">Home</span>
+                            <span>Home</span>
                         </Link>
                     </li>
                     <li className="rounded-sm">
@@ -104,19 +104,20 @@ const Sidebar = ({ signOut }) => {
                           to="/new-product"
                           className="flex items-center p-2 space-x-3 rounded-md"
                         >
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-6 h-6"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                            strokeWidth={2}
+                          <svg 
+                            xmlns="http://www.w3.org/2000/svg" 
+                            class="icon icon-tabler icon-tabler-pencil" 
+                            width="20" height="20" 
+                            viewBox="0 0 24 24" 
+                            strokeWidth={2} 
+                            stroke="#ffffff" 
+                            fill="none" 
+                            strokeLinecap="round" 
+                            strokeLinejoin="round"
                           >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
-                            />
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                            <path d="M4 20h4l10.5 -10.5a1.5 1.5 0 0 0 -4 -4l-10.5 10.5v4" />
+                            <line x1="13.5" y1="6.5" x2="17.5" y2="10.5" />
                           </svg>
                             <span>Create a product</span>
                         </Link>
@@ -131,7 +132,7 @@ const Sidebar = ({ signOut }) => {
                             className="w-6 h-6"
                             fill="none"
                             viewBox="0 0 24 24"
-                            stroke="currentColor"
+                            stroke="#ffffff"
                             strokeWidth={2}
                           >
                             <path
@@ -144,8 +145,8 @@ const Sidebar = ({ signOut }) => {
                         </Link>
                     </li>
                     <li className="rounded-sm">
-                        <a
-                            href="#"
+                        <Link
+                            to="#"
                             className="flex items-center p-2 space-x-3 rounded-md"
                         >
                             <svg
@@ -153,7 +154,7 @@ const Sidebar = ({ signOut }) => {
                                 className="w-6 h-6 text-gray-100"
                                 fill="none"
                                 viewBox="0 0 24 24"
-                                stroke="currentColor"
+                                stroke="#ffffff"
                                 strokeWidth={2}
                             >
                                 <path
@@ -167,10 +168,8 @@ const Sidebar = ({ signOut }) => {
                                     d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                                 />
                             </svg>
-                            <span className="text-gray-100">
-                                Products
-                            </span>
-                        </a>
+                            <span>Products</span>
+                        </Link>
                     </li>
                     <li className="rounded-sm">
                       <button
@@ -182,7 +181,7 @@ const Sidebar = ({ signOut }) => {
                           className="w-6 h-6"
                           fill="none"
                           viewBox="0 0 24 24"
-                          stroke="currentColor"
+                          stroke="#ffffff"
                           strokeWidth={2}
                         >
                           <path
