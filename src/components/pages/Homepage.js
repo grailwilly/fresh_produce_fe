@@ -6,7 +6,6 @@ const Homepage = () => {
 
   return (
     <>
-    
       <div className="pt-30 lg:flex items-center relative container mx-auto">
         <div className="w-full md:w-[60%] lg:w-1/2 h-[10hv] lg:h-full pr-0 lg:pr-10 2xl:pr-0">
           <Carousel />
@@ -180,7 +179,6 @@ const Homepage = () => {
       </div>
       <Footer />
     </>
-
   )
 }
 
