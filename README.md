@@ -1,25 +1,40 @@
-<h1 align="center">
-  <br>
-  <a href="https://fresh-produce-791ce.web.app/"><img src="./src/assets/logo_nav.png" alt="logo"></a>
-  <br>
-  Fresh Produce
-  <br>
-</h1>
-<h4 align="center">
-   <a href="#links">Links</a>
-   •
-   <a href="#versions">Versions</a>
-   •
-   <a href="#roadmap">Roadmap</a>
-   •
-   <a href="#development-guide">Development guide</a>
-   •
-   <a href="#deployment">Deployment</a>
-   •
-   <a href="#contact">Contact</a>
-   •
-   <a href="#copyright">Copyright</a>
-</h4>
+<div align="center">
+  <h1>
+    <br>
+    <a href="https://fresh-produce-791ce.web.app/"><img src="./src/assets/logo_nav.png" alt="logo"></a>
+    <br>
+    Fresh Produce
+    <br>
+  </h1>
+  <h4>
+    <a href="#links">Links</a>
+    •
+    <a href="#versions">Versions</a>
+    •
+    <a href="#roadmap">Roadmap</a>
+    •
+    <a href="#development-guide">Development guide</a>
+    •
+    <a href="#deployment">Deployment</a>
+    •
+    <a href="#contact">Contact</a>
+    •
+    <a href="#copyright">Copyright</a>
+  </h4>
+  <h3>
+    <a href="https://github.com/johndominicvillalino">
+      <img src="https://img.shields.io/badge/maintainer-%40johndominicvillalino-teal">
+    </a>
+    <a href="https://github.com/grailwilly">
+      <img src="https://img.shields.io/badge/maintainer-%40grailwilly-teal">
+    </a>
+    <a href="https://fresh-produce-791ce.web.app/">
+      <img src="https://img.shields.io/website?url=http%3A%2F%2Ffresh-produce-791ce.web.app/%2F">
+    </a>
+  </h3>
+</div>
+
+### [![Website Screenshot](screenshot.png)](https://fresh-produce-791ce.web.app/)
 
 To organize the agri ecosystem in the Philippines through technology and data. Improve the lives of agri players involved in the agri value chain or agri ecosystem, which includes farmers, wholesalers, resellers, retailers, aggregators, and supply chain players.
 
