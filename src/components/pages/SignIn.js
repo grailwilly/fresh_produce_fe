@@ -4,12 +4,18 @@ import { connect } from 'react-redux'
 import { signIn } from '../actions/user'
 import { loadCartItems } from '../actions/cart'
 import { Footer } from '../layouts/Footer'
+import RequestSpin from '../layouts/RequestSpin'
 
 
 const SignIn = ({ signIn, user, loadCartItems }) => {
 
+
+
   const navigate = useNavigate()
 
+  const [invalid, setInvalid ]= useState(false)
+  const [isClick, setIsClick ]= useState(false)
+  
 
   const [showpass, setShowPass] = useState(false)
 
@@ -19,19 +25,24 @@ const SignIn = ({ signIn, user, loadCartItems }) => {
 
   })
 
-
   useEffect(() => {
-
     // let role = user.action.user.data.role 
 
     if (user.user) {
       navigate('/dashboard')
-      
     }
+
+    if(user.status > 299) {
+      setIsClick(false)
+      setInvalid(true)
+    }
+
 
   }, [user])
 
   const onChangeHandler = (e) => {
+
+    setInvalid(false)
     const { value, name } = e.target;
     setUserInfo(e => {
       return {
@@ -42,14 +53,22 @@ const SignIn = ({ signIn, user, loadCartItems }) => {
   }
 
   const loginHandler = (e) => {
+    e.preventDefault()
+    setIsClick(true)
     signIn(userInfo)
+    setUserInfo({
+      email: '',
+      password: ''
+    })
   }
 
   return (
-    <>
+    <>  <form>
       <div className="bg-indigo-50">
+      
         <div className="xl:px-20 md:px-10 sm:px-6 px-4 md:py-12 py-9 2xl:mx-auto 2xl:container md:flex items-center justify-center">
           <div className="bg-white shadow-lg rounded xl:w-1/3 lg:w-5/12 md:w-1/2 w-full lg:px-10 sm:px-6 sm:py-10 px-2 py-6">
+           {invalid && <div className='animate-bounce'><p className='text-center mb-5 text-red-600 '>Invalid Credentials!</p></div> } 
             <p tabIndex={0} className="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">
               Sign In With Your Account
             </p>
@@ -60,12 +79,14 @@ const SignIn = ({ signIn, user, loadCartItems }) => {
                 Sign Up here
               </Link>
             </p>
+            
             <div className="mt-6 w-full">
+          
               <label htmlFor="email" className="text-sm font-medium leading-none text-gray-800">
                 {" "}
                 Email{" "}
               </label>
-              <input onChange={onChangeHandler} id="email" name='email' aria-labelledby="email" type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="e.g: john@gmail.com " />
+              <input onChange={onChangeHandler} id="email" value={userInfo.email} name='email' aria-labelledby="email" type="email" className="bg-gray-200 border rounded text-xs font-medium leading-none placeholder-gray-800 text-gray-800 py-3 w-full pl-3 mt-2" placeholder="e.g: john@gmail.com " />
             </div>
             <div className="mt-6 w-full">
               <label htmlFor="password" className="text-sm font-medium leading-none text-gray-800">
@@ -73,7 +94,7 @@ const SignIn = ({ signIn, user, loadCartItems }) => {
                 Password{" "}
               </label>
               <div className="relative flex items-center justify-center">
-                <input onChange={onChangeHandler} name='password' type={showpass ? "text" : "password"} className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
+                <input onChange={onChangeHandler} value={userInfo.password} name='password' type={showpass ? "text" : "password"} className="bg-gray-200 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2" />
                 <div onClick={() => setShowPass(!showpass)} className="absolute right-0 mt-2 mr-3 cursor-pointer">
                   <div id="show">
                     <svg width={16} height={16} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,12 +115,23 @@ const SignIn = ({ signIn, user, loadCartItems }) => {
                 </div>
               </div>
             </div>
+
             <div className="mt-8">
-              <button onClick={loginHandler} role="button" className="bg-teal focus:ring-2 focus:ring-offset-2  text-sm font-semibold leading-none text-white focus:outline-none  border rounded hover:bg-dark-green py-4 w-full">
+            {!isClick && <button onClick={loginHandler} type='submit' role="button" className="bg-teal focus:ring-2 focus:ring-offset-2  text-sm font-semibold leading-none text-white focus:outline-none border rounded hover:bg-dark-green py-4 w-full">
                 Sign in
+              </button> }  
+             {isClick &&  <button className='bg-teal text-white w-full border h-[45px] rounded'>
+                <div className="animate-spin w-[20px] m-auto">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4335 4335" width="20" height="20">
+                    <path fill="#fff" d="M3346 1077c41,0 75,34 75,75 0,41 -34,75 -75,75 -41,0 -75,-34 -75,-75 0,-41 34,-75 75,-75zm-1198 -824c193,0 349,156 349,349 0,193 -156,349 -349,349 -193,0 -349,-156 -349,-349 0,-193 156,-349 349,-349zm-1116 546c151,0 274,123 274,274 0,151 -123,274 -274,274 -151,0 -274,-123 -274,-274 0,-151 123,-274 274,-274zm-500 1189c134,0 243,109 243,243 0,134 -109,243 -243,243 -134,0 -243,-109 -243,-243 0,-134 109,-243 243,-243zm500 1223c121,0 218,98 218,218 0,121 -98,218 -218,218 -121,0 -218,-98 -218,-218 0,-121 98,-218 218,-218zm1116 434c110,0 200,89 200,200 0,110 -89,200 -200,200 -110,0 -200,-89 -200,-200 0,-110 89,-200 200,-200zm1145 -434c81,0 147,66 147,147 0,81 -66,147 -147,147 -81,0 -147,-66 -147,-147 0,-81 66,-147 147,-147zm459 -1098c65,0 119,53 119,119 0,65 -53,119 -119,119 -65,0 -119,-53 -119,-119 0,-65 53,-119 119,-119z"
+                    />
+                  </svg>
+                </div>
               </button>
+            }
             </div>
           </div>
+    
           <div className="xl:w-1/3 md:w-1/2 lg:ml-16 ml-8 md:mt-0 mt-6">
             <div className="pl-8 md:block hidden">
               <h1 className="ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase">Reconnect to the origin of food</h1>
@@ -122,6 +154,7 @@ const SignIn = ({ signIn, user, loadCartItems }) => {
           </div>
         </div>
       </div>
+      </form>
       <Footer />
     </>
   )

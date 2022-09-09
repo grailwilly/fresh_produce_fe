@@ -1,6 +1,6 @@
-import { baseURL,MY_ORDERS } from "../constants/constants"
+import { baseURL,MY_ORDERS,PAY_NOW,COMPLETE_ORDER } from "../constants/constants"
 import axios from "axios"
-import { ComputerDesktopIcon } from "@heroicons/react/20/solid"
+
 
 
 export const completeOrder = (or, headers) => async dispatch => {
@@ -16,7 +16,6 @@ export const completeOrder = (or, headers) => async dispatch => {
     })
 
     try {
-
     
         const res = await axios({
             method: 'post',
@@ -25,8 +24,18 @@ export const completeOrder = (or, headers) => async dispatch => {
             headers
         })
 
+        dispatch({
+            type:COMPLETE_ORDER,
+            action:res.status
+        })
+
     } catch (err) {
         console.error(err.message)
+        dispatch({
+            type:COMPLETE_ORDER,
+            action:500
+        })
+
 
     }
 
@@ -107,11 +116,12 @@ export const payNow = (data,headers) => async dispatch => {
             data: {id:data.id}
         })
 
-        console.log(res.data)
+        dispatch({
+            type: PAY_NOW,
+            action: res.data
+        })
         
     } catch (err) {
         console.error(err.message)
     }
-
-
 }

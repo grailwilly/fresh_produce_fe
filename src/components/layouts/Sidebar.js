@@ -18,6 +18,7 @@ const Sidebar = ({ signOut }) => {
 
 
   return (
+
     <div className="flex">
     <div
         className={` ${
@@ -146,7 +147,7 @@ const Sidebar = ({ signOut }) => {
                     </li>
                     <li className="rounded-sm">
                         <Link
-                            to="#"
+                            to="/seller-products"
                             className="flex items-center p-2 space-x-3 rounded-md"
                         >
                             <svg
