@@ -15,7 +15,7 @@ const sold = createReducer({}, builder => {
         })
 
         .addCase(SIGN_OUT,(state, payload) => {
-            state = {}
+            state = []
             return state;
         })
        

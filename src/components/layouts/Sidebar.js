@@ -95,8 +95,8 @@ const Sidebar = ({ signOut }) => {
               </Link>
             </li>
             <li className="rounded-sm">
-              <a
-                href="#"
+              <Link
+                to="/seller-products"
                 className="flex items-center p-2 space-x-3 rounded-md"
               >
                 <svg
@@ -114,7 +114,7 @@ const Sidebar = ({ signOut }) => {
                   />
                 </svg>
                 <span>Products</span>
-              </a>
+              </Link>
             </li>
           
             <li className="rounded-sm">

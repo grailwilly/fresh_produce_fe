@@ -16,6 +16,7 @@ const SellerDashboard = ({getMySold,user,sold}) => {
   },[user])
 
   useEffect(() => {
+    
     let total = sold.map(e => e.price)
     total = total.reduce((a,b) => a+b,0)
     setTotalSales(total)
