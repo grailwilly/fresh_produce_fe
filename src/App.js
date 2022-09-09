@@ -56,8 +56,6 @@ function App({ user, reloadUser, loadCartItems }) {
 
   }, [user])
 
-  console.log(role)
-
   return (
     <>
 
