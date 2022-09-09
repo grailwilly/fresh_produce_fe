@@ -8,15 +8,15 @@ const Homepage = () => {
     <>
     
       <div className="pt-30 lg:flex items-center relative container mx-auto">
-        <div className="w-full lg:w-1/2 h-full lg:pr-10 xl:pr-0">
+        <div className="w-full md:w-[60%] lg:w-1/2 h-[10hv] lg:h-full pr-0 lg:pr-10 2xl:pr-0">
           <Carousel />
         </div>
         <div  role="contentinfo"  className="w-full lg:w-1/2 h-full">
-          <p tabIndex="0" className="uppercase text-2xl mb-4">From Farms To Our Customers AND Businesses</p>
-          <h1 tabIndex="0" className="text-left text-teal text-4xl lg:text-6xl font-black mb-8">We Work Directly With Farmers | Ranchers Fisherfolks | Innovators</h1>
-          <p tabIndex="0" className="text-gray-800 font-regular mb-8">COMBINING TECH WITH AGRICULTURE. We pride ourselves on the relationships we’ve built with local, Filipino farmers. Each and every day, we have the pleasure of working closely with hundreds of market leading growers and producers to bring the best quality produce straight from harvest to you. </p>
-          <div className="bg-white lg:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg">
-            <div className="sm:flex items-center py-2">
+          <p tabIndex="0" className="uppercase text-lg xl:text-2xl mb-1 2xl:mb-4">From Farms To Our Customers AND Businesses</p>
+          <h1 tabIndex="0" className="text-left text-teal text-5xl 2xl:text-6xl font-black mb-8">We Work Directly With Farmers | Ranchers Fisherfolks | Innovators</h1>
+          <p tabIndex="0" className="text-gray-800 font-regular mb-8 text-sm xl:text-lg">COMBINING TECH WITH AGRICULTURE. We pride ourselves on the relationships we’ve built with local, Filipino farmers. Each and every day, we have the pleasure of working closely with hundreds of market leading growers and producers to bring the best quality produce straight from harvest to you. </p>
+          <div className="bg-white mt-8 xl:mt-16 py-4 px-4 flex flex-col sm:flex-row justify-start sm:justify-between items-start sm:items-center shadow-lg rounded-lg">
+            <div className="sm:flex items-center py-0 xl:py-2">
               <div className="flex items-center">
                 <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/right_aligned_with_searchbar_Svg4.svg" alt="icon" />
                 <input aria-label="Farmer name" className="w-24 xl:w-32 leading-none tracking-normal text-gray-800 ml-2.5 placeholder-black" placeholder="Farmer Name" />
