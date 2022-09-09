@@ -83,18 +83,32 @@ The different hosted versions of the website can be found at the following locat
 * 🌐 **Production:** Coming Soon
 
 ## Versions
+The [GitHub Releases](https://help.github.com/en/github/administering-a-repository/managing-releases-in-a-repository) system is used to increment the version of, tag and publish releases, and is the single source of truth for what the current version of the website is. No version numbers are explicitly held in the repo’s files.
 
+Since this codebase is a website, there’s obviously no need to maintain any release branches to backport fixes to, as there’ll only ever be one live site which will always have the latest changes on it.
+
+When a new version of the site is released via GitHub, the website will query a specific GitHub API endpoint at runtime to get both the latest release’s version number and publish date, which is then displayed to the end user in the footer of each page.
 
 ### Numbering
+[SemVer](https://semver.org/) is used, albeit loosely, as a version numbering scheme for the website. The _major_, _minor_ and _patch_ parts are bumped for a release in accordance with the following types of change to the codebase:
 
-
+* **Major:** Complete or significant rewrites of the website where the fundamental technology used has changed, for instance moving from a Jekyll-based static website to a declarative React.js web application, or even a move to a client-server architecture by introducing an ASP.NET Core server application into the mix. A major design refresh of the website’s visuals would also fall into this category.
+* **Minor:** For major (i.e. newsworthy) feature update releases. I tend to work on a couple of major new features (either in terms of functionality or new sections of the website) between club AGMs, so the frequency of these updates is usually also annual.
+* **Patch:** For everything else, including but not necessarily limited to: publishing news articles, new content, fixing typos, fixing bugs and broken links, fixing incorrect information and minor new features.
 
 ### Major releases
 
+There have been two major releases published so far, which are listed below with their key changes, as well as which features are currently in progress for the next major update – every historical release ever published since going-live with this new site can be found on the [Releases](https://github.com/grailwilly/fresh_produce_fe/releases) page:
 
+* **v1.0** – Minimum Viable Product:
+  * Public pages includes homepage, products, farmers and wholesale.
+  * Authenticated pages include dashboard of buyer and seller, create product, order history, and payment.
+  * User sign in and sign up.
+  * Add to cart features and order.
 
 ## Roadmap
 
+This is a non-exhaustive list of the things I’d like to add in future development, in no particular order. This is obviously subject to change, but it should be a good indication of what’s to come. I’ll tick things off as and when they get done. I want to eventually get to a stage where I’ve provided enough tooling so that most of the content can be published by other people, so that I’m freed-up to work primarily on adding new features.
 
 ### Content
 
