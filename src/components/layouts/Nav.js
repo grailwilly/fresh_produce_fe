@@ -86,7 +86,7 @@ const Nav = ({ user, signOut }) => {
               <Menu as="div" className="relative inline-block text-left">
               <div>
                 <Menu.Button className="inline-flex w-full justify-center">
-                  <img class="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" alt="avatar" />
+                  <img className="p-1 w-10 h-10 rounded-full ring-2 ring-gray-300 dark:ring-gray-500" src="https://img.icons8.com/doodle/48/000000/user-male-skin-type-5.png" alt="avatar" />
                   <ChevronDownIcon className="-mr-1 ml-2 mt-2 h-5 w-5" aria-hidden="true" />
                 </Menu.Button>
               </div>

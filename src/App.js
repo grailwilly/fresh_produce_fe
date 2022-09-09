@@ -17,6 +17,7 @@ import { loadCartItems } from "./components/actions/cart";
 import LoadBar from "./components/layouts/LoadBar";
 import NoMatch from "./components/pages/NoMatch";
 import OrderSingle from "./components/pages/OrderSingle";
+import SellerOrders from "./components/pages/SellerOrders";
 
 
 const Dashboard = ({ userRole }) => {
@@ -75,6 +76,7 @@ function App({ user, reloadUser, loadCartItems }) {
         <Route path='new-product' element={<CreateProduct />} />
 
         <Route path='/order/:id' element={<OrderSingle />}></Route>
+        <Route path='/seller-orders' element={<SellerOrders />}></Route>
 
         <Route path="*" element={<NoMatch />} />
       </Routes>
