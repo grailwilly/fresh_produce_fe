@@ -36,9 +36,13 @@
 
 ### [![Website Screenshot](screenshot.png)](https://fresh-produce-791ce.web.app/)
 
-To organize the agri ecosystem in the Philippines through technology and data. Improve the lives of agri players involved in the agri value chain or agri ecosystem, which includes farmers, wholesalers, resellers, retailers, aggregators, and supply chain players.
+<p>To organize the agri ecosystem in the Philippines through technology and data. Improve the lives of agri players involved in the agri value chain or agri ecosystem, which includes farmers, wholesalers, resellers, retailers, aggregators, and supply chain players.</p>
 
+<p>The presence of middlemen resulted in farmer exploitation, forcing them to sell their produce at lower rates. This meant that farmers were experiencing unfair practices, a high food wastage due to supply-demand mismatch and lower income.</p>
 
+<p>Also, due to lack of transparency and the absence of specialised equipment, there were issues such as delayed deliveries as well as undersupply of fresh produce to retail outlets.</p>
+
+<p>This made the founders pivot to a B2B model to solve “one of the toughest agricultural supply chain problems”, build a reliable, cost-efficient, and high-speed infrastructure, and enable retailers and merchants to purchase fresh produce directly from farmers daily.</p>
 
 ## Table of contents
 
