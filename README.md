@@ -56,9 +56,8 @@
   * [Technical](#technical)
 * [Development guide](#development-guide)
   * [Prerequisites](#prerequisites)
-    * [Microsoft Windows](#microsoft-windows)
-    * [Git for Windows](#git-for-windows)
-    * [GitHub setup](#github-setup)
+    * [Reactjs](#microsoft-windows)
+    * [Ruby on Rails](#git-for-windows)
     * [Local repository](#local-repository)
       * [Clone](#clone)
       * [Configure](#configure)
@@ -131,70 +130,56 @@ This is a non-exhaustive list of the things I’d like to add in future developm
 * Markdown documentation
 
 ## Development guide
-
-
+We've tried to write this readme in such a way that those who aren’t necessarily familiar with coding have a fighting chance of contributing to the website’s development if they’re so inclined. As such, if you’re already a developer, some of these instructions may seem a little overly-verbose, so you can probably skip some elements. Conversely, if you’re not too tech-savvy, I recommend reading everything if you want to be able to help us out with the site – incidentally, you’re absolutely welcome here whatever level of experience (if any), hence why I’ve tried to be as explicit as possible with instructions, so please don’t feel put-off if it looks overwhelming! [Send me an email](#contact) if you’d like to get involved but could do with a hand getting started, and I’d be happy to get you going.
 
 ### Prerequisites
+For the most part, these are the bare-minimum requirements for getting up-and-running.
 
-.
+#### Reactjs
+1. install node and npm version
+2. git clone git@github.com:grailwilly/fresh_produce_fe.git
+3. npm install
 
-#### Microsoft Windows
-
-
-#### Git for Windows
-
-
-
-#### GitHub setup
-
+#### Ruby on rails
+1. install ruby and rails version
+2. git clone https://github.com/johndominicvillalino/fresh_produce
+3. bundle install
 
 #### Local repository
-
-
-
-##### Clone
-
-
-
-##### Configure
-
-
-
-#### Jekyll
-
-
-
+For those unfamiliar, a Git [_“repository”_](https://en.wikipedia.org/wiki/Repository_(version_control)), or _“repo”_ for short, is a set of source code files (usually stored on a centralised _“remote”_ server somewhere) alongside specific Git-managed metadata files which contain information about where the remote server can be found on the internet (or local network), various pieces of configuration information and, **most importantly**, a _complete_ history tree of all changes made to the codebase – what specific changes were made at each stage, when they were made, who made them and how they were integrated back into the primary flow of code from temporary _“branches”_ where developers can work on isolated copies of the code without interfering with other devs working on the same codebase.
 
 ### Running the website locally
 
+Once clone, open two terminal for the react and rails.
 
+1. rails s -p 5000 for the API rails
+2. npm start for the front end
 
 ### Recommended tools
 
-
-
-#### Chromium-based browser
-
-
+I’ve recommended some tools you may want to use for development. None of these are required, they just might make working on the site easier.
 
 #### Visual Studio Code
 
+If you’re going to be modifying the website’s source code, you’ll need a good [text editor](https://en.wikipedia.org/wiki/Text_editor). I recommend using Visual Studio Code as it’s modern, lightweight, cross-platform and has many features that you’d usually find in a fully-fledged [IDE](https://en.wikipedia.org/wiki/Integrated_development_environment) such as [syntax highlighting](https://en.wikipedia.org/wiki/Syntax_highlighting), [code completion, IntelliSense](https://en.wikipedia.org/wiki/Intelligent_code_completion) and a large ecosystem of plugins. For simple website development using vanilla HTML, CSS and very occasional JavaScript, it should work extremely well out of the box without any configuration changes or additional plugins:
 
+1. Download and run the Visual Studio Code installer from their website:
+   * https://code.visualstudio.com/
+2. Continue through the installation wizard until the end. The default options are fine.
 
-#### Microsoft Word
-
-
-
-#### Adobe Photoshop
-
+#### Canva
+We use for photo editing, but most editors should do a good job of simple editing tasks.
 
 ### Contributions
 
+My vision for this project, as it evolves, is that it will start to attract a small core team of developers and non-technical contributors, such that it becomes a great place where those wanting to get their hands dirty with some open-source website development can do so. Having more team members will also free me up to work on feature additions, major refactors and integrating new technologies.
 
+Eventually, it would be great if I had time to develop a simple, bespoke set of CMS-style authoring tools that would let non-technical club members author and submit news articles and other content for inclusion on the site with minimal or even zero technical intervention. As it stands, the site will need manually updating by technically-minded folk for the foreseeable future, but hopefully we’ll get to this stage someday.
 
 ## Deployment
 
-
+1. Firebase - [https://fresh-produce-791ce.web.app/](https://fresh-produce-791ce.web.app/)
+2. Heroku - [API Rails](https://heroku.com)
 
 ## Contact
 
