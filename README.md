@@ -112,15 +112,23 @@ This is a non-exhaustive list of the things I’d like to add in future developm
 
 ### Content
 
-
+* A comprehensive technical documentation and guides.
+* Library of high quality photos.
+* Plenty of members' photos to be added.
 
 ### Features
 
-
+* User registration and login page redirecting to dashboard.
+* Add to cart 
+* Order history
+* Payment
 
 ### Technical
 
-
+* React for frontend
+* Api rails for backend
+* Design using tailwind
+* Markdown documentation
 
 ## Development guide
 
